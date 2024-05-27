@@ -1,0 +1,103 @@
+.btn {
+  width: 86px;
+  height: 40px;
+  margin: 5px;
+  padding: 8px 10px;
+  display: inline-block;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  border-width: 1px;
+  border-style: solid;
+  position: relative;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-transition: all .3s ease-out;
+  -o-transition: all .3s ease-out;
+  transition: all .3s ease-out;
+}
+
+.btn:focus, .btn:active:focus {
+  outline-offset: -2px;
+  text-decoration: none;
+}
+
+.btn:active {
+  background-image: none;
+  outline: 0;
+}
+
+.btnbox {
+  width: 100%;
+  padding: 30px 10px;
+  text-align: center;
+}
+
+/* button-set */
+.btn {
+  background-color: #a9cb7d;
+  border-color: #a9cb7d;
+  color: #fff;
+  border-radius: 0;
+}
+
+.btn:before {
+  font-size: 24px;
+  margin: -2px 5px 0 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn:hover {
+  background-color: #fff;
+  border-color: #3ec5f7;
+  color: #3ec5f7;
+}
+
+.btn span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 24px;
+}
+
+.btn--sm {
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+  padding: 8px 10px;
+}
+
+.btn--sm__icon {
+  font-size: 24px;
+}
+
+.btn--sm span {
+  line-height: 24px;
+}
+
+.btn--submit {
+  background-color: #d60d0d;
+  border-color: #d60d0d;
+  color: #fff;
+}
+
+.btn--search {
+  background-color: #3ec5f7;
+  border-color: #3ec5f7;
+  color: #fff;
+}
+
+.btn--full {
+  width: calc(100% - 1px*2);
+}

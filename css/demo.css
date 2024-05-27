@@ -1,0 +1,23 @@
+select { font-size: 16px; }
+
+.js .analysis__top {
+	display: none;
+	visibility: hidden;
+}
+.harmonia-select{}
+
+@media only screen and (min-width: 1000px) {
+	
+	.harmonia-select, #yolo {
+		display: none;
+		visibility: hidden;
+		margin: auto;
+	}
+	
+	.js .analysis__top {
+		display: block;
+		visibility: visible;
+		
+	}
+	
+}

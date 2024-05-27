@@ -1,0 +1,2213 @@
+﻿//This is sass file
+@import default
+@import master
+
+@keyframes scrolldown1
+	0%
+		background-position: 0 -80px
+
+	75%
+		background-position: 0 0
+
+	100%
+		background-position: 0 80px
+
+
+@keyframes scrolldown
+	0%
+		background-position: 0 -80px
+
+	75%
+		background-position: 0 0
+
+	100%
+		background-position: 0 80px
+
+@keyframes zoomslide
+	0%
+		transform: scale(1.2)
+
+	100%
+		transform: scale(1)
+
+.selectnav
+	display: none
+	appearance: none
+	width: 100%
+	background: url('../images/select-arrow.svg') no-repeat right 10px center
+	background-size: 20px auto
+	border-radius: 5px
+	padding: 10px
+	border: solid 1px #ebebeb
+	position: relative
+	color: #000
+
++rwd($gridLg + 'px')
+	#nav
+		display: none
+
+	.selectnav
+		display: block
+
+.slick-arrow
+	width: 42px
+	height: 42px
+	border-radius: 90%
+	top: 50%
+	transform: translateY(-50%)
+
+	+rwd($gridLg + 'px')
+
+
+	+rwd($gridSm + 'px')
+
+
+
+.slick-prev
+	left: -60px
+	background: url('../images/left.svg') no-repeat center
+	background-size: 42px
+
+	+rwd($gridLg + 'px')
+		left: -60px
+
+	+rwd($gridMd + 'px')
+		left: -55px
+
+	+rwd($gridSm + 'px')
+
+
+.slick-next
+	right: -60px
+	background: url('../images/right.svg') no-repeat center
+	background-size: 42px
+	transform: translateY(-50%)
+
+	+rwd($gridLg + 'px')
+		right: -60px
+
+	+rwd($gridMd + 'px')
+		right: -55px
+
+	+rwd($gridSm + 'px')
+
+
+.noscroll
+	overflow: hidden
+
+.wrapper--padding
+	+rwd($gridLg + 'px')
+		padding-bottom: 60px
+
+.error
+	align-items: center
+	justify-content: center
+	text-align: center
+	padding: 40px 6.4vw
+
+	.error-title
+		+font-size(36px)
+		font-weight: bold
+
+
+	.error-text
+		margin-top: 25px
+
+	.error-btn
+		height: 63px
+		align-items: center
+		justify-content: center
+		+font-size(18px)
+		font-weight: bold
+		border-radius: 63px
+		width: 290px
+		background: #6ca003
+		color: #fff
+		margin: 70px auto
+		transition: .3s ease-out
+		border: 0
+
+		&:hover
+			opacity: .8
+
+		i
+			margin-right: 10px
+
+	+rwd($gridLg + 'px')
+		.error-title
+			+font-size(30px)
+
+	+rwd($gridSm + 'px')
+		.error-btn
+			height: 55px
+			+font-size(16px)
+			border-radius: 55px
+			width: 250px
+
+.page-banner
+	position: relative
+
+	.slogan
+		color: #fff
+		position: absolute
+		z-index: 2
+		align-items: center
+		justify-content: center
+		width: 100%
+		height: 100%
+		text-align: center
+		.en
+			font-family: $font2
+			+font-size2(18px,30px)
+		.title
+			+font-size(42px)
+		.text
+			+font-size(20px)
+			margin: 10px 0
+			padding: 0 6.4vw
+
+			&:after
+				content: ''
+				display: block
+				width: 60px
+				height: 1px
+				background: #fff
+				margin: 30px auto 0
+
+		+rwd($gridMd + 'px')
+			.title
+				+font-size(36px)
+			.text
+				+font-size(18px)
+
+		+rwd($gridSm + 'px')
+			.en
+				+font-size2(16px,24px)
+			.title
+				+font-size(30px)
+			.text
+				+font-size(16px)
+
+	.category-link
+		width: 100%
+		position: absolute
+		bottom: 0
+		left: 0
+		background: rgba(0,0,0,.4)
+		z-index: 3
+		overflow: hidden
+
+
+		.link
+			width: 100%
+			align-items: center
+			.link-line
+				min-width: 1px
+				width: 1px
+				height: 30px
+				background: #707070
+
+			.link-item
+				height: 78px
+				align-items: center
+				justify-content: center
+				width: 100%
+				color: #fff
+				+font-size(19px)
+				position: relative
+				/*&:before
+					content: ''
+					display: block
+					width: 1px
+					height: 17px
+					position: absolute
+					background: #fff
+					left: 50%
+					transform: translateX(-50%)
+					top: -17px
+					transition: .3s ease-out
+					z-index: 20*/
+
+				span
+					color: #bbbbbb
+					transition: .3s ease-out
+
+
+
+				&:after
+					position: absolute
+					content: ''
+					display: block
+					bottom: 4px
+					left: 0
+					width: 100%
+					height: 5px
+					background: #123b5f
+					transition: .3s ease-out
+					transform: scale(0)
+
+				&:hover
+					span
+						color: #fff
+					&:before
+						top: 0
+					&:after
+						transform: scale(1)
+			.link-item--active
+				span
+					color: #fff
+				&:before
+					top: 0
+				&:after
+					transform: scale(1)
+
+		+rwd($gridLg2 + 'px')
+			.link
+				.link-item
+					height: 73px
+
+		+rwd($gridMd + 'px')
+			.link
+				.link-item
+					+font-size(18px)
+
+	figure
+		position: relative
+		height: 740px
+		z-index: 1
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			z-index: 2
+			background: rgba(0,0,0,.4)
+			width: 100%
+			height: 100%
+			left: 0
+			top: 0
+		img
+			display: block
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			object-fit: cover
+			object-position: center
+			z-index: 1
+
+		+rwd($gridLg + 140 + 'px')
+			height: 58.33vw
+
+		+rwd($gridSm + 'px')
+			height: 400px
+
+
+.page-main
+	padding: 120px 0 0 0
+	+rwd($gridLg + 140 + 'px')
+		padding: 6.4vw 0 0 0
+
+
+.product-category
+	width: 100%
+	align-items: center
+	li
+		width: 100%
+	.product-category__item
+		width: 100%
+		height: 67px
+		border: solid 1px #d8d8d8
+		align-items: center
+		justify-content: center
+		+font-size(18px)
+		color: #bbb
+		transition: .3s ease
+
+		&:hover
+			color: #000
+
+	.product-category__item--active
+		background: $bg1
+		color: #fff
+		border: solid 1px #00284b
+		&:hover
+			color: #fff
+
+	+rwd($gridMd + 'px')
+		.product-category__item
+			+font-size(18px)
+
+.product-list
+	width: 100%
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: auto
+	grid-row-gap: 86px
+	margin: 85px 0
+
+	.product-list__item
+		position: relative
+		figure
+			position: relative
+			width: 66.67%
+			height: 533px
+			overflow: hidden
+			margin-bottom: 137px
+
+			img
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				object-fit: contain
+				object-position: center
+				transition: .3s ease-out
+
+			&:hover
+				img
+					transform: scale(1.05)
+
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 100%
+			height: 480px
+			background: $bg
+
+		&:nth-child(even)
+			figure
+				order: 2
+
+			.product-list__info
+				order: 1
+
+	.product-list__info
+		padding: 0 3vw
+		position: relative
+		z-index: 2
+		width: 33.34%
+
+	.product-list__name
+		+font-size(36px)
+		display: block
+		padding-top: 75px
+		position: relative
+		span
+			display: block
+			font-weight: 500
+			width: 100%
+			transition: .3s ease
+			min-height: 160px
+
+		&:after
+			content: ''
+			display: block
+			width: 2px
+			height: 30px
+			background: $bg1
+			margin-bottom: 15px
+			position: absolute
+			top: 35px
+			left: 5px
+
+		&:hover
+			span
+				transform: translateX(5px)
+
+	.product-list__text
+		margin: 0 0 60px 0
+		+font-size2(18px,30px)
+		font-weight: 300
+		color: #666666
+		&:before
+			content: ''
+			display: block
+			min-width: 12px
+			width: 12px
+			height: 2px
+			background: $bg1
+			margin-right: 15px
+			margin-top: 14px
+			margin-left: 5px
+
+	.product-list__btn
+		width: 180px
+		height: 60px
+		border-radius: 60px
+		align-items: center
+		justify-content: center
+		color: #fff
+		background: $bg1
+		+font-size(18px)
+		transition: .3s ease
+
+		&:hover
+			transform: translateY(5px)
+
+	+rwd($gridLg + 140 + 'px')
+		margin: 5.34vw 0 6.4vw 0
+		.product-list__item
+			height: 45vw
+			figure
+				height: 34.1vw
+				margin-bottom: 10.21vw
+			&:before
+				height: 32.7vw
+
+		.product-list__name
+			+font-size(36px)
+			padding-top: 45px
+			margin-bottom: 3.4vw
+			span
+				min-height: auto
+			&:after
+				top: 0
+
+	+rwd($gridLg + 'px')
+		.product-list__item
+			figure
+				width: 60%
+				height: 38.76vw
+			&:before
+				height: 30.7vw
+
+		.product-list__info
+			width: 40%
+		.product-list__name
+			span
+				display: block
+				min-height: 90px
+		.product-list__text
+			margin: 4.17vw 0 3vw 0
+
+
+	+rwd($gridLg2 + 'px')
+		.product-list__item
+			height: 50vw
+			figure
+
+			&:before
+				height: 35.17vw
+
+		.product-list__name
+			+font-size(30px)
+			span
+				min-height: 75px
+
+		.product-list__text
+			margin: 4.17vw 0 3vw 0
+			+font-size2(16px,24px)
+
+	+rwd($gridMd + 'px')
+		grid-template-columns: repeat(2,1fr)
+		grid-gap: 4.4vw
+		align-items: flex-start
+		.product-list__item
+			flex-wrap: wrap
+			height: auto
+			figure
+				width: 100%
+				margin-bottom: 0
+				height: 27.6vw
+			&:before
+				display: none
+
+			&:nth-child(even)
+				figure
+					order: 1
+
+				.product-list__info
+					order: 2
+		.product-list__info
+			background: $bg
+			width: 100%
+			padding: 30px 20px
+		.product-list__name
+			+font-size(24px)
+			span
+				min-height: 60px
+		.product-list__text
+			margin: 3vw 0
+			&:before
+				display: none
+		.product-list__btn
+			width: 120px
+			height: 40px
+			+font-size(16px)
+	+rwd($gridSm + 'px')
+		grid-template-columns: 1fr
+		.product-list__item
+			figure
+				height: 58.14vw
+
+/*.product-list
+	width: 100%
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: auto
+	grid-row-gap: 86px
+	margin: 85px 0
+
+	.product-list__item
+		position: relative
+		height: 537px
+
+		figure
+			position: relative
+			width: 50%
+			height: 400px
+			overflow: hidden
+
+			img
+				position: absolute
+				width: 100%
+				height: 100%
+				top: 0
+				left: 0
+				object-fit: cover
+				object-position: center
+				transition: .3s ease-out
+
+			&:hover
+				img
+					transform: scale(1.05)
+
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 100%
+			height: 350px
+			background: $bg
+
+		&:nth-child(even)
+			figure
+				order: 2
+
+			.product-list__info
+				order: 1
+
+	.product-list__info
+		padding: 0 4vw
+		position: relative
+		z-index: 2
+		width: 50%
+
+	.product-list__name
+		+font-size(42px)
+		display: block
+		padding-top: 75px
+		position: relative
+		span
+			display: block
+			font-weight: 500
+			width: 100%
+			transition: .3s ease
+
+		&:after
+			content: ''
+			display: block
+			width: 1px
+			height: 30px
+			background: $bg1
+			margin-bottom: 15px
+			position: absolute
+			top: 35px
+			left: 5px
+
+		&:hover
+			span
+				transform: translateX(5px)
+
+	.product-list__text
+		margin: 110px 0 60px 0
+		+font-size2(18px,30px)
+		font-weight: 300
+		color: #666666
+		&:before
+			content: ''
+			display: block
+			min-width: 12px
+			width: 12px
+			height: 2px
+			background: $bg1
+			margin-right: 15px
+			margin-top: 12px
+			margin-left: 5px
+
+	.product-list__btn
+		width: 180px
+		height: 60px
+		border-radius: 60px
+		align-items: center
+		justify-content: center
+		color: #fff
+		background: $bg1
+		+font-size(18px)
+		transition: .3s ease
+
+		&:hover
+			transform: translateY(5px)
+
+	+rwd($gridLg + 140 + 'px')
+		margin: 5.34vw 0 6.4vw 0
+		.product-list__item
+			height: 44.75vw
+			figure
+				height: 33.33vw
+			&:before
+				height: 29.17vw
+
+		.product-list__name
+			+font-size(36px)
+			padding-top: 45px
+			&:after
+				top: 0
+
+		.product-list__text
+			margin: 9.17vw 0 4vw 0
+
+	+rwd($gridLg2 + 'px')
+		.product-list__item
+			&:before
+				height: 30.17vw
+		.product-list__name
+			+font-size(30px)
+		.product-list__text
+			margin: 8.17vw 0 3vw 0
+			+font-size2(16px,24px)
+
+	+rwd($gridMd + 'px')
+		grid-template-columns: repeat(2,1fr)
+		grid-gap: 4.4vw
+		.product-list__item
+			flex-wrap: wrap
+			height: auto
+			figure
+				width: 100%
+			&:before
+				display: none
+
+			&:nth-child(even)
+				figure
+					order: 1
+
+				.product-list__info
+					order: 2
+		.product-list__info
+			background: $bg
+			width: 100%
+			padding: 30px 20px
+		.product-list__name
+			+font-size(24px)
+		.product-list__text
+			margin: 3vw 0
+			&:before
+				display: none
+		.product-list__btn
+			width: 120px
+			height: 40px
+			+font-size(16px)
+	+rwd($gridSm + 'px')
+		grid-template-columns: 1fr
+		.product-list__item
+			figure
+				height: 58.14vw*/
+
+.product-detail
+	width: 100%
+	margin: 86px 0
+	.product-detail__img
+		width: 66.67%
+		.slider
+			width: 100%
+
+			figure
+				position: relative
+				width: 100%
+				height: 533px
+				overflow: hidden
+				img
+					position: absolute
+					width: 100%
+					height: 100%
+					top: 0
+					left: 0
+					object-fit: contain
+					object-position: center
+					transition: .3s ease-out
+
+		.slider2
+			margin-top: 9px
+			width: 100%
+			figure
+				position: relative
+				width: 100%
+				height: 102px
+				overflow: hidden
+				opacity: .5
+				cursor: pointer
+				transition: .3s ease
+				img
+					position: absolute
+					width: 100%
+					height: 100%
+					top: 0
+					left: 0
+					object-fit: contain
+					object-position: center
+					transition: .3s ease-out
+
+			.slick-current
+				figure
+					opacity: 1
+
+			.slick-slide
+				margin: 0 4.5px
+			.slick-list
+				margin: 0 -4.5px
+
+	.product-detail__info
+		width: 33.34%
+		padding: 0 0 0 3vw
+
+	.product-detail__name
+		+font-size(36px)
+		display: block
+		padding-top: 40px
+		position: relative
+		span
+			display: block
+			font-weight: 500
+			width: 100%
+			transition: .3s ease
+
+		&:after
+			content: ''
+			display: block
+			width: 2px
+			height: 30px
+			background: $bg1
+			margin-bottom: 15px
+			position: absolute
+			top: 0
+			left: 5px
+
+		&:hover
+			span
+				transform: translateX(5px)
+
+	.product-detail__text
+		margin: 20px 0
+		+font-size2(18px,30px)
+		font-weight: 300
+		color: #666666
+
+	.product-detail__list
+		li
+			margin-top: 20px
+			.s-title
+				align-items: center
+				+font-size(20px)
+				color: #000
+				&:before
+					content: ''
+					display: block
+					min-width: 12px
+					width: 12px
+					height: 2px
+					background: $bg1
+					margin-right: 5px
+					margin-top: 5px
+					margin-left: 5px
+
+			.s-text
+				+font-size2(18px,30px)
+				font-weight: 300
+				color: #666666
+				margin-top: 5px
+				padding-left: 24px
+
+	.product-detail__btn
+		width: 100%
+		max-width: 380px
+		display: grid
+		grid-template-columns: repeat(2,1fr)
+		grid-column-gap: 20px
+		margin-top: 45px
+
+		.link
+			align-items: center
+			justify-content: center
+			width: 100%
+			height: 60px
+			border-radius: 60px
+			+font-size(18px)
+
+			&:hover
+				transform: translateY(5px)
+
+		.link-back
+			background: #f5f5f5
+			color: #000
+
+		.link-contact
+			background: $bg1
+			color: #fff
+
+	+rwd($gridLg + 140 + 'px')
+		margin: 5.34vw 0 6.4vw 0
+		.product-detail__img
+			.slider
+				figure
+					height: 34.1vw
+			.slider2
+				figure
+					height: 6.5vw
+
+		.product-detail__name
+			+font-size(36px)
+
+	+rwd($gridLg + 'px')
+		.product-detail__btn
+			margin-top: 6.4vw
+			max-width: 100%
+			z-index: 3
+			grid-column-gap: 0
+			.link
+				border-radius: 0
+				&:hover
+					transform: translateY(0)
+
+	+rwd($gridLg2 + 'px')
+		flex-wrap: wrap
+		.product-detail__img, .product-detail__info
+			width: 100%
+		.product-detail__img
+			.slider
+				figure
+					height: 58.1vw
+
+			.slider2
+				figure
+					height: 11.11vw
+		.product-detail__info
+			padding: 30px 0
+
+		.product-detail__name
+			+font-size(30px)
+
+		.product-detail__text
+			+font-size2(16px,24px)
+
+		.product-detail__list
+			li
+				.s-title
+					+font-size(18px)
+
+				.s-text
+					+font-size2(16px,24px)
+
+	+rwd($gridMd + 'px')
+		.product-detail__name
+			+font-size(24px)
+
+/*.product-detail
+	width: 100%
+	margin: 86px 0
+	.product-detail__img
+		width: 50%
+		.slider
+			width: 100%
+
+			figure
+				position: relative
+				width: 100%
+				height: 400px
+				overflow: hidden
+				img
+					position: absolute
+					width: 100%
+					height: 100%
+					top: 0
+					left: 0
+					object-fit: cover
+					object-position: center
+					transition: .3s ease-out
+
+		.slider2
+			margin-top: 9px
+			width: 100%
+			figure
+				position: relative
+				width: 100%
+				height: 75px
+				overflow: hidden
+				opacity: .5
+				cursor: pointer
+				transition: .3s ease
+				img
+					position: absolute
+					width: 100%
+					height: 100%
+					top: 0
+					left: 0
+					object-fit: cover
+					object-position: center
+					transition: .3s ease-out
+
+			.slick-current
+				figure
+					opacity: 1
+
+			.slick-slide
+				margin: 0 4.5px
+			.slick-list
+				margin: 0 -4.5px
+
+	.product-detail__info
+		width: 50%
+		padding: 0 4vw
+
+	.product-detail__name
+		+font-size(42px)
+		display: block
+		padding-top: 40px
+		position: relative
+		span
+			display: block
+			font-weight: 500
+			width: 100%
+			transition: .3s ease
+
+		&:after
+			content: ''
+			display: block
+			width: 1px
+			height: 30px
+			background: $bg1
+			margin-bottom: 15px
+			position: absolute
+			top: 0
+			left: 5px
+
+		&:hover
+			span
+				transform: translateX(5px)
+
+	.product-detail__text
+		margin: 20px 0
+		+font-size2(18px,30px)
+		font-weight: 300
+		color: #666666
+
+	.product-detail__list
+		li
+			margin-top: 20px
+			.s-title
+				align-items: center
+				+font-size(20px)
+				color: #000
+				&:before
+					content: ''
+					display: block
+					min-width: 12px
+					width: 12px
+					height: 2px
+					background: $bg1
+					margin-right: 5px
+					margin-top: 5px
+					margin-left: 5px
+
+			.s-text
+				+font-size2(18px,30px)
+				font-weight: 300
+				color: #666666
+				margin-top: 5px
+				padding-left: 24px
+
+	.product-detail__btn
+		width: 100%
+		max-width: 380px
+		display: grid
+		grid-template-columns: repeat(2,1fr)
+		grid-column-gap: 20px
+		margin-top: 45px
+
+		.link
+			align-items: center
+			justify-content: center
+			width: 100%
+			height: 60px
+			border-radius: 60px
+			+font-size(18px)
+
+			&:hover
+				transform: translateY(5px)
+
+		.link-back
+			background: #f5f5f5
+			color: #000
+
+		.link-contact
+			background: $bg1
+			color: #fff
+
+	+rwd($gridLg + 140 + 'px')
+		margin: 5.34vw 0 6.4vw 0
+		.product-detail__img
+			.slider
+				figure
+					height: 26.41vw
+			.slider2
+				figure
+					height: 5.33vw
+
+		.product-detail__name
+			+font-size(36px)
+
+	+rwd($gridLg + 'px')
+		.product-detail__btn
+			position: fixed
+			bottom: 0
+			left: 0
+			max-width: 100%
+			z-index: 3
+			grid-column-gap: 0
+			.link
+				border-radius: 0
+				&:hover
+					transform: translateY(0)
+
+	+rwd($gridLg2 + 'px')
+		flex-wrap: wrap
+		.product-detail__img, .product-detail__info
+			width: 100%
+		.product-detail__img
+			.slider
+				figure
+					height: 58.1vw
+
+			.slider2
+				figure
+					height: 11.11vw
+		.product-detail__info
+			padding: 30px 0
+
+		.product-detail__name
+			+font-size(30px)
+
+		.product-detail__text
+			+font-size2(16px,24px)
+
+		.product-detail__list
+			li
+				.s-title
+					+font-size(18px)
+
+				.s-text
+					+font-size2(16px,24px)
+
+	+rwd($gridMd + 'px')
+		.product-detail__name
+			+font-size(24px)*/
+
+
+.product-detail__btm
+	background: $bg
+	padding: 70px 0
+
+	.title
+		border-bottom: solid 1px #dcdcdc
+		padding: 10px 0
+		+font-size(20px)
+		align-items: center
+
+
+		&:before
+			content: ''
+			display: block
+			width: 3px
+			height: 20px
+			background: $bg1
+			margin-right: 10px
+			margin-top: 2px
+
+		.en
+			font-family: $font2
+			font-weight: 300
+			+font-size2(20px,20px)
+			padding-left: 20px
+			margin-top: 10px
+
+	.slider3
+		margin-top: 35px
+		.item
+			figure
+				width: 100%
+				height: 251px
+				position: relative
+				overflow: hidden
+				a
+					position: absolute
+					width: 100%
+					height: 100%
+					z-index: 3
+					top: 0
+					left: 0
+
+				.icon
+					width: 70px
+					height: 70px
+					top: 0
+					right: 0
+					z-index: 2
+					position: absolute
+					justify-content: flex-end
+					padding: 10px 10px 0 0
+					font-size: 24px
+
+					&:before
+						position: absolute
+						content: ''
+						display: block
+						width: 0
+						height: 0
+						top: 0
+						right: 0
+						z-index: -1
+						border-style: solid
+						border-width: 0 70px 70px 0
+						border-color: transparent $bg1 transparent transparent
+
+				img
+					position: absolute
+					width: 100%
+					height: 100%
+					object-fit: contain
+					object-position: center
+					left: 0
+					top: 0
+					transition: .3s ease
+					z-index: 1
+
+				&:hover
+					img
+						transform: scale(1.05)
+
+			.name
+				display: block
+				+font-size(20px)
+				margin-top: 25px
+
+		.slick-slide
+			margin: 0 17.5px
+		.slick-list
+			margin: 0 -17.5px
+
+		.slick-prev, .slick-next
+			width: 30px
+			height: 30px
+
+		.slick-prev
+			background: url("../images/left2.svg") no-repeat
+			background-size: contain
+
+		.slick-next
+			background: url("../images/right2.svg") no-repeat
+			background-size: contain
+
+	+rwd($gridLg + 140 + 'px')
+		.slider3
+			.item
+				figure
+					height: 13.75vw
+
+	+rwd($gridMd + 'px')
+		padding: 6.4vw 0
+		.slider3
+			.item
+				figure
+					height: 27.6vw
+
+	+rwd($gridSm + 'px')
+		.slider3
+			.item
+				figure
+					height: 58.1vw
+
+
+.contact
+	width: 100%
+	.contact-tips
+		max-width: 670px
+		width: 100%
+		margin: auto
+		+font-size2(18px,30px)
+		font-weight: 300
+
+		span
+			color: #ff0000
+
+		+rwd($gridMd + 'px')
+			+font-size2(16px,24px)
+
+
+	.list
+		width: 100%
+		display: grid
+		grid-template-columns: repeat(2,1fr)
+		grid-template-rows: auto
+		grid-column-gap: 38px
+		grid-row-gap: 50px
+		margin: 120px 0
+
+		.list-item--wrap
+			grid-column-start: 1
+			grid-column-end: 3
+			width: 100%
+			align-items: center
+			justify-content: space-between
+			flex-wrap: wrap
+
+			> div
+				align-items: center
+
+			.reset-captcha
+				width: 30px
+				height: 30px
+				cursor: pointer
+
+			.list-item__btn
+				width: 180px
+				height: 60px
+				border-radius: 60px
+				align-items: center
+				justify-content: center
+				color: #fff
+				background: $bg1
+				+font-size(18px)
+				transition: .3s ease
+				border: 0
+				appearance: none
+
+				&:hover
+					transform: translateY(5px)
+
+		.list-item
+			width: 100%
+			border: solid 1px #c5c5c5
+			border-radius: 5px
+			position: relative
+
+			.text-danger
+				color: #ff0000
+				position: absolute
+				left: 0
+				bottom: -20px
+				+font-size(14px)
+				font-weight: 300
+
+			.list-item__title
+				position: absolute
+				left: 18px
+				top: -15px
+				background: #fff
+				padding: 0 30px 0 20px
+				+font-size(18px)
+
+				span
+					color: #ff0000
+					position: absolute
+					right: 10px
+					top: -5px
+
+			.list-item__field
+				appearance: none
+				border: 0
+				height: 60px
+				width: 100%
+				background: none
+				padding: 0 38px
+				font-weight: 300
+				+font-size(18px)
+
+				&:focus
+					outline: none
+
+			.list-item__field2
+				appearance: none
+				border: 0
+				height: 200px
+				width: 100%
+				background: none
+				padding: 20px 38px
+				font-weight: 300
+				+font-size(18px)
+
+				&:focus
+					outline: none
+
+			.list-item__field3
+				appearance: none
+				border: 0
+				height: 60px
+				width: 167px
+				background: none
+				padding: 0 38px
+				font-weight: 300
+				+font-size(18px)
+
+				&:focus
+					outline: none
+
+		.list-item--full
+			grid-column-start: 1
+			grid-column-end: 3
+
+		.list-item--arrow
+			position: relative
+
+			.list-item__field
+				color: #000
+
+			&:before
+				content: ''
+				display: block
+				position: absolute
+				right: 15px
+				top: 50%
+				transform: translateY(-50%)
+				width: 0
+				height: 0
+				border-style: solid
+				border-width: 8px 7.5px 0 7.5px
+				border-color: #000000 transparent transparent transparent
+
+	+rwd($gridMd + 'px')
+		.list
+			grid-template-columns: 1fr
+			margin: 10.62vw 0
+			.list-item
+				.list-item__title, .list-item__field, .list-item__field2, .list-item__field3
+					+font-size(16px)
+
+
+			.list-item--wrap, .list-item--full
+				grid-column-start: 1
+				grid-column-end: 2
+
+
+
+	+rwd($gridSm + 'px')
+		.list
+			.list-item--wrap
+				display: block
+				.list-item
+					max-width: 169px
+				.list-item__btn
+					margin: 30px auto 0
+
+			.list-item
+				.list-item__title
+					left: 10px
+					padding: 0 30px 0 10px
+
+				.list-item__field
+					padding: 0 21px
+				.list-item__field2
+					padding: 20px 21px
+				.list-item__field3
+					padding: 0 21px
+
+
+
+
+	.info
+		max-width: 1200px
+		width: 100%
+		display: grid
+		height: 250px
+		margin-bottom: 30px
+		grid-template-columns: repeat(4,1fr)
+
+		.info-item
+			align-items: center
+			justify-content: center
+			border-right: solid 1px #e8e8e8
+			width: 100%
+			text-align: center
+			.info-item__name
+				color: #848484
+				a
+					color: #848484
+
+
+			&:last-child
+				border: none
+
+			i
+				width: 93px
+				height: 93px
+				border: solid 1px #a1a1a1
+				border-radius: 93px
+				display: flex
+				align-items: center
+				justify-content: center
+				margin: 0 auto 30px
+
+			&:nth-child(1)
+				i
+					font-size: 40px
+				.info-item__name
+					+font-size(20px)
+					font-weight: 500
+
+			&:nth-child(2)
+				i
+					font-size: 36px
+				.info-item__name
+					+font-size(20px)
+					font-weight: 500
+
+			&:nth-child(3)
+				i
+					font-size: 36px
+				.info-item__name
+					+font-size(18px)
+
+			&:nth-child(4)
+				i
+					font-size: 36px
+				.info-item__name
+					+font-size(18px)
+					font-weight: 600
+
+		+rwd($gridLg + 140 + 'px')
+			grid-template-columns: repeat(2,1fr)
+			height: 500px
+			.info-item
+				&:nth-child(even)
+					border: none
+
+				&:nth-child(3),&:nth-child(4)
+					border-top: solid 1px #e8e8e8
+
+		+rwd($gridSm + 'px')
+			grid-template-columns: 1fr
+			height: auto
+			.info-item
+				justify-content: flex-start
+				padding: 20px 0
+				border-bottom: solid 1px #e8e8e8
+				border-right: none
+				>
+					div
+						display: flex
+						align-items: center
+						i
+							margin: 0 20px 0 0
+				&:nth-child(even)
+					border-right: none
+					border-bottom: solid 1px #e8e8e8
+				&:nth-child(3),&:nth-child(4)
+					border-top: none
+
+				&:last-child
+					border-bottom: none
+
+				i
+					width: 60px
+					height: 60px
+					border-radius: 60px
+					font-size: 24px !important
+
+	.map
+		width: 100%
+		height: 27.08vw
+		margin-bottom: 100px
+		iframe
+			display: block
+
+		+rwd($gridLg + 140 + 'px')
+			height: 38.78vw
+
+
+.about
+	width: 100%
+
+	.list
+		display: grid
+		grid-template-columns: 1fr
+		grid-row-gap: 150px
+		width: 100%
+		margin-bottom: 130px
+
+		.list-item
+			width: 100%
+			position: relative
+			justify-content: space-between
+			.list-item-pic
+				position: relative
+				width: 709px
+				height: 486px
+				padding: 0
+				overflow: hidden
+
+				&:before
+					content: ''
+					position: absolute
+					display: block
+					top: 0
+					left: 0
+					width: calc( 100% - 37px)
+					height: calc( 100% - 37px)
+					background: $bg
+					z-index: 1
+
+				figure
+					position: absolute
+					bottom: 0
+					right: 0
+					width: calc( 100% - 37px)
+					height: calc( 100% - 37px)
+					z-index: 2
+					background: none
+
+					img
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: 100%
+						object-fit: cover
+						object-position: center
+
+			.info
+				width: 491px
+				padding: 0 68px 0 112px
+				align-items: center
+
+				.info-name
+					+font-size(36px)
+					display: block
+					padding-top: 40px
+					position: relative
+					span
+						display: block
+						font-weight: 500
+						width: 100%
+						transition: .3s ease
+
+					&:after
+						content: ''
+						display: block
+						width: 2px
+						height: 30px
+						background: $bg1
+						margin-bottom: 15px
+						position: absolute
+						top: 0
+						left: 5px
+
+					&:hover
+						span
+							transform: translateX(5px)
+
+				.info-text
+					margin: 30px 0 0 0
+					+font-size2(18px,30px)
+					font-weight: 300
+					color: #666666
+
+			&:nth-child(even)
+				.list-item-pic
+					order: 2
+					&:before
+						top: 0
+						left: inherit
+						right: 0
+						background: $bg1
+
+
+					figure
+						left: 0
+						bottom: 0
+						top: inherit
+						right: inherit
+
+				.info
+					order: 1
+					padding: 0 54px 0 0
+
+		+rwd($gridLg + 140 + 'px')
+			grid-row-gap: 11.19vw
+			margin-bottom: 9.69vw
+			.list-item
+				.list-item-pic
+					width: 52.87vw
+					height: 36.24vw
+					&:before, figure
+						width: calc( 100% - 2.8vw)
+						height: calc( 100% - 2.8vw)
+
+				.info
+					width: 36.61vw
+					padding: 0 4vw 0 7.6vw
+
+
+		+rwd($gridLg2 + 'px')
+			grid-row-gap: 8.19vw
+			.list-item
+				flex-wrap: wrap
+
+				.list-item-pic
+					width: 72.87vw
+					height: 46.7vw
+
+				.info
+					width: 100%
+					padding: 6.4vw 0
+
+					.info-name
+						+font-size(30px)
+					.info-text
+						p
+							margin-bottom: 20px
+						br
+							display: none
+
+				&:nth-child(even)
+					justify-content: flex-end
+					.list-item-pic
+						order: 1
+
+					.info
+						order: 2
+						padding: 6.4vw 0
+						.info-name
+							text-align: right
+							&:after
+								left: inherit
+								right: 5px
+
+		+rwd($gridMd + 'px')
+			.list-item
+				.info
+					.info-name
+						+font-size(24px)
+
+					.info-text
+						+font-size2(16px,24px)
+
+		+rwd($gridSm + 'px')
+			.list-item
+				.list-item-pic
+					width: 100%
+					height: 55.12vw
+				&:nth-child(even)
+					justify-content: flex-start
+					.info
+						.info-name
+							text-align: left
+
+							&:after
+								left: 0
+								right: inherit
+
+.service
+	width: 100%
+
+	.list
+		display: grid
+		grid-template-columns: 1fr
+		grid-row-gap: 150px
+		width: 100%
+		margin-bottom: 130px
+
+		.list-item
+			width: 100%
+			position: relative
+			justify-content: space-between
+			.list-item-pic
+				position: relative
+				width: 709px
+				height: 486px
+				padding: 0
+				overflow: hidden
+
+				&:before
+					content: ''
+					position: absolute
+					display: block
+					top: 0
+					left: 0
+					width: calc( 100% - 37px)
+					height: calc( 100% - 37px)
+					background: $bg
+					z-index: 1
+
+				figure
+					position: absolute
+					bottom: 0
+					right: 0
+					width: calc( 100% - 37px)
+					height: calc( 100% - 37px)
+					z-index: 2
+					background: none
+
+					img
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: 100%
+						object-fit: cover
+						object-position: center
+
+			.info
+				width: 491px
+				padding: 0 68px 0 112px
+				align-items: center
+
+				.info-name
+					+font-size(36px)
+					display: block
+					padding-top: 40px
+					position: relative
+					span
+						display: block
+						font-weight: 500
+						width: 100%
+						transition: .3s ease
+
+					&:after
+						content: ''
+						display: block
+						width: 2px
+						height: 30px
+						background: $bg1
+						margin-bottom: 15px
+						position: absolute
+						top: 0
+						left: 5px
+
+					&:hover
+						span
+							transform: translateX(5px)
+
+				.info-text
+					margin: 30px 0 0 0
+					+font-size2(18px,30px)
+					font-weight: 300
+					color: #666666
+
+			&:nth-child(even)
+				.list-item-pic
+					order: 2
+					&:before
+						top: 0
+						left: inherit
+						right: 0
+						background: $bg1
+
+
+					figure
+						left: 0
+						bottom: 0
+						top: inherit
+						right: inherit
+
+				.info
+					order: 1
+					padding: 0 54px 0 0
+
+		+rwd($gridLg + 140 + 'px')
+			grid-row-gap: 11.19vw
+			margin-bottom: 9.69vw
+			.list-item
+				.list-item-pic
+					width: 52.87vw
+					height: 36.24vw
+					&:before, figure
+						width: calc( 100% - 2.8vw)
+						height: calc( 100% - 2.8vw)
+
+				.info
+					width: 36.61vw
+					padding: 0 4vw 0 7.6vw
+
+
+		+rwd($gridLg2 + 'px')
+			grid-row-gap: 8.19vw
+			.list-item
+				flex-wrap: wrap
+
+				.list-item-pic
+					width: 72.87vw
+					height: 46.7vw
+
+				.info
+					width: 100%
+					padding: 6.4vw 0
+
+					.info-name
+						+font-size(30px)
+					.info-text
+						p
+							margin-bottom: 20px
+						br
+							display: none
+
+				&:nth-child(even)
+					justify-content: flex-end
+					.list-item-pic
+						order: 1
+
+					.info
+						order: 2
+						padding: 6.4vw 0
+						.info-name
+							text-align: right
+							&:after
+								left: inherit
+								right: 5px
+
+		+rwd($gridMd + 'px')
+			.list-item
+				.info
+					.info-name
+						+font-size(24px)
+
+					.info-text
+						+font-size2(16px,24px)
+
+		+rwd($gridSm + 'px')
+			.list-item
+				.list-item-pic
+					width: 100%
+					height: 55.12vw
+				&:nth-child(even)
+					justify-content: flex-start
+					.info
+						.info-name
+							text-align: left
+
+							&:after
+								left: 0
+								right: inherit
+
+	.list2
+		display: grid
+		grid-template-columns: 1fr
+		grid-row-gap: 150px
+		width: 100%
+		margin-bottom: 130px
+		+rwd($gridLg + 140 + 'px')
+			grid-row-gap: 11.19vw
+
+		.list-item
+			width: 100%
+			position: relative
+			.list-item__wrap
+				margin-top: 30px
+				+rwd($gridLg2 + 'px')
+					flex-wrap: wrap
+					.list-item__list,.list-item__pic
+						width: 100%
+			.list-item__name
+				+font-size(36px)
+				display: block
+				padding-top: 40px
+				position: relative
+				width: 100%
+				span
+					display: block
+					font-weight: 500
+					width: 100%
+					transition: .3s ease
+
+				&:after
+					content: ''
+					display: block
+					width: 2px
+					height: 30px
+					background: $bg1
+					margin-bottom: 15px
+					position: absolute
+					top: 0
+					left: 5px
+
+				+rwd($gridLg2 + 'px')
+					+font-size(30px)
+
+				+rwd($gridMd + 'px')
+					+font-size(24px)
+
+			.list-item__list
+				width: 50%
+				padding-right: 80px
+				padding-top: 40px
+				li
+					margin-top: 30px
+					.s-title
+						align-items: center
+						+font-size(20px)
+						color: #000
+						margin-bottom: 15px
+						&:before
+							content: ''
+							display: block
+							min-width: 12px
+							width: 12px
+							height: 2px
+							background: $bg1
+							margin-right: 18px
+							margin-top: 0
+							margin-left: 15px
+
+						+rwd($gridMd + 'px')
+							+font-size(18px)
+
+
+					.s-text
+						+font-size2(18px,30px)
+						font-weight: 300
+						color: #666666
+						margin-top: 5px
+						padding-left: 46px
+
+						+rwd($gridMd + 'px')
+							+font-size2(16px,24px)
+
+					.s-text--flex
+						display: flex
+						.text1
+							width: 180px
+							min-width: 180px
+						.text2
+							width: 87px
+							min-width: 87px
+
+				+rwd($gridLg + 140 + 'px')
+					padding-top: 0
+					padding-right: 0
+					li
+						.s-text
+							br
+								display: none
+
+						.s-text--flex
+							display: block
+
+			.list-item__pic
+				position: relative
+				width: 50%
+				height: 583px
+
+				&:before
+					content: ''
+					position: absolute
+					display: block
+					width: 545px
+					top: 0
+					left: 0
+					height: 583px
+					background: $bg
+
+				.pic1,.pic2,.pic3
+					position: absolute
+					width: 377px
+					height: 252px
+					overflow: hidden
+					img
+						position: absolute
+						top: 0
+						left: 0
+						width: 100%
+						height: 100%
+						object-fit: cover
+						object-position: center
+				.pic1
+					top: 48px
+					left: -48px
+					z-index: 1
+
+				.pic2
+					top: 192px
+					right: 0
+					z-index: 2
+
+				.pic3
+					bottom: -48px
+					left: -48px
+					z-index: 3
+
+				+rwd($gridLg + 140 + 'px')
+					height: 43.48vw
+					margin-top: 6.4vw
+					&:before
+						width: 40.64vw
+						height: 43.48vw
+					.pic1,.pic2,.pic3
+						width: 28.11vw
+						height: 18.8vw
+
+					.pic1
+						top: 3.6vw
+						left: -3.6vw
+
+					.pic2
+						top: 14.32vw
+
+					.pic3
+						left: -3.6vw
+						bottom: -3.6vw
+
+				+rwd($gridLg2 + 'px')
+					display: grid
+					grid-template-columns: repeat(3,1fr)
+					grid-column-gap: 3vw
+					height: auto
+					padding: 4.6vw
+					&:before
+						width: 100%
+						height: calc(100% - 8.2vw)
+						bottom: 0
+						top: inherit
+
+					.pic1,.pic2,.pic3
+						position: relative
+						top: inherit
+						left: inherit
+						bottom: inherit
+						right: inherit
+						width: 100%
+						height: 15.8vw
+
+				+rwd($gridSm+ 'px')
+					grid-template-columns: repeat(2,1fr)
+					grid-gap: 3vw
+					.pic1,.pic2
+						height: 24.8vw
+					.pic3
+						grid-column-start: 1
+						grid-column-end: 3
+						height: 48.8vw
+
+			&:nth-child(2)
+				.list-item__wrap
+					+rwd($gridLg2 + 'px')
+						.list-item__list
+							order: 1
+							padding-left: 0
+						.list-item__pic
+							order: 2
+							display: grid
+							grid-template-columns: repeat(3,1fr)
+							grid-column-gap: 3vw
+							height: auto
+							padding: 4.6vw
+							&:before
+								width: 100%
+								height: 70%
+								bottom: 0
+								top: inherit
+								left: 0
+
+							.pic1,.pic2,.pic3
+								height: 15.8vw
+								position: relative
+								top: inherit
+								left: inherit
+								bottom: inherit
+								right: inherit
+								width: 100%
+					+rwd($gridSm+ 'px')
+						.list-item__pic
+							grid-template-columns: repeat(2,1fr)
+							.pic1,.pic2
+								height: 24.8vw
+							.pic3
+								grid-column-start: 1
+								grid-column-end: 3
+								height: 48.8vw
+
+
+				.list-item__list
+					order: 2
+					padding-right: 0
+					padding-left: 100px
+				.list-item__pic
+					height: 567px
+					order: 1
+					&:before
+						height: 514px
+						background: $bg1
+						top: inherit
+						bottom: 0
+						left: 48px
+
+					.pic1,.pic3
+						height: 237px
+						width: 355px
+
+					.pic1
+						left: inherit
+						top: 0
+						right: -48px
+
+					.pic2
+						width: 263px
+						height: 394px
+						left: 0
+						bottom: 48px
+						top: inherit
+
+					.pic3
+						left: inherit
+						right: -48px
+						bottom: 48px
+
+
+				+rwd($gridLg + 140 + 'px')
+					.list-item__list
+						padding-left: 7.5vw
+					.list-item__pic
+						height: 42.28vw
+						&:before
+							height: 38.33vw
+
+						.pic1,.pic3
+							height: 17.67vw
+							width: 26.47vw
+
+						.pic1
+							right: -3.6vw
+
+						.pic2
+							width: 19.61vw
+							height: 29.38vw
+							bottom: 3.6vw
+
+						.pic3
+							right: -3.6vw
+							bottom: 3.6vw
+
+
+
+
+
+
+
+

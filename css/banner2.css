@@ -1,0 +1,189 @@
+@charset "UTF-8";
+.banner {
+  width: 100%;
+  position: relative;
+}
+
+.banner .slick-arrow {
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  font-size: 60px;
+  font-family: 'icomoon';
+  color: #fff;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 640px) {
+  .banner .slick-arrow {
+    font-size: 40px;
+    top: inherit;
+    bottom: 30px;
+  }
+}
+
+.banner .prev, .banner .next {
+  position: absolute !important;
+  position: relative;
+}
+
+.banner .prev:before, .banner .next:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  font-family: 'icomoon';
+  font-size: 100%;
+  color: inherit;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.banner .prev {
+  left: 20px;
+}
+
+.banner .prev:before {
+  content: "\f104";
+}
+
+.banner .next {
+  right: 20px;
+}
+
+.banner .next:before {
+  content: "\f105";
+}
+
+.banner__item {
+  position: relative;
+}
+
+.banner__item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.banner__item .slogan {
+  position: absolute;
+  top: 14vw;
+  left: 18vw;
+  width: 470px;
+  z-index: 99;
+}
+
+@media only screen and (max-width: 640px) {
+  .banner__item .slogan {
+    top: 15vw;
+    left: 7vw;
+    width: 380px;
+  }
+}
+
+.banner__item .slogan__title, .banner__item .slogan__subtitle {
+  left: 0.1rem;
+  color: #fff;
+  display: block;
+}
+
+.banner__item .slogan__title {
+  font-size: 55px;
+  font-size: 3.4375rem;
+  line-height: 75px;
+  line-height: 4.6875rem;
+  letter-spacing: 0.1rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .banner__item .slogan__title {
+    font-size: 30px;
+    font-size: 1.875rem;
+    line-height: 30px;
+    line-height: 1.875rem;
+    letter-spacing: normal;
+  }
+}
+
+.banner__item .slogan__subtitle {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  letter-spacing: 0.15rem;
+}
+
+@media only screen and (max-width: 640px) {
+  .banner__item .slogan__subtitle {
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.17188rem;
+    letter-spacing: normal;
+    margin-bottom: 15px;
+  }
+}
+
+.banner__item .slogan__but {
+  border: 1px #fff solid;
+  border-radius: 6px;
+  padding: 10px 40px 10px 60px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  letter-spacing: 0.1rem;
+  padding-left: -0.1rem;
+  color: #fff;
+  position: relative;
+}
+
+.banner__item .slogan__but:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 30px;
+  width: 30px;
+  height: 30px;
+  font-family: 'icomoon';
+  font-size: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  .banner__item .slogan__but:hover {
+    background: white;
+    color: #000;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner__item .slogan__but {
+    background: white;
+    color: #000;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .banner__item .slogan__but {
+    padding: 5px 15px 5px 35px;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.17188rem;
+    position: relative;
+  }
+  .banner__item .slogan__but:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    font-family: 'icomoon';
+    font-size: 100%;
+  }
+}

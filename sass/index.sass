@@ -1,0 +1,639 @@
+﻿//This is sass file
+@import default
+
+
+.banner
+	width: 100%
+	position: relative
+
+	.idx-banner
+		width: 100%
+		overflow: hidden
+		position: relative
+		z-index: 1
+
+		.slider
+			width: 100%
+			position: relative
+			z-index: 1
+
+			.slick-next, .slick-prev
+				background: url('../images/idx-arrow.svg') no-repeat center
+				background-size: 40px
+
+				+rwd($gridSm + 'px')
+					background-size: 20px
+
+			.slider-full.slick-active
+				.slogan
+					h2
+
+
+
+			.slider-full
+				width: 100%
+				position: relative
+				overflow: hidden
+				height: calc(100vh - 100px)
+
+				+rwd($gridLg + 'px')
+					height: calc(100vh - 80px)
+
+				&.slick-current
+					.slider-flex
+						.slogan
+							transform: translateY(0)
+							transition-delay: .3s
+
+				.slider-flex
+					height: inherit
+					width: 100%
+					align-items: center
+					position: relative
+					z-index: 5
+					position: absolute
+					top: 0
+					bottom: 0
+					+rwd($gridMd + 'px')
+						align-items: flex-end
+
+					.slogan
+						margin-left: 9.6%
+						width: 420px
+						margin-bottom: 50px
+						letter-spacing: 0.06em
+						transition: .3s ease-out
+						transform: translateY(-5px)
+
+						h2
+							+font-size2(36px,52px)
+							font-weight: bold
+
+						.text
+							+font-size2(16px,30px)
+							margin: 30px 0
+							color: #666
+							+ellipsis(2)
+
+						.banner-more
+							width: 250px
+							height: 60px
+							border-radius: 60px
+							background: $mainColor1
+							color: #fff
+							align-items: center
+							justify-content: center
+
+							&:hover
+								opacity: .8
+								transform: translateY(5px)
+
+						+rwd($wrapWidth + 'px')
+							h2
+								+font-size2(30px,42px)
+
+							.banner-more
+								width: 220px
+								height: 50px
+								border-radius: 50px
+
+						+rwd($gridLg + 'px')
+							h2
+								+font-size2(24px,36px)
+
+						+rwd($gridMd + 'px')
+							width: 100%
+							margin: 0 0 130px 0
+							padding: 0 60px 0 50px
+							h2
+								+font-size2(20px,30px)
+
+
+
+				.slider-text
+					position: absolute
+					bottom: -70px
+					z-index: 4
+					left: 8.6%
+					+rwd($gridLg + 'px')
+						height: 90px
+						bottom: -20px
+						img
+							width: auto
+							height: 100%
+
+
+					+rwd($gridSm + 'px')
+						height: 70px
+						bottom: -10px
+
+
+
+				.slider-bg
+					width: 38.8%
+					position: absolute
+					bottom: 0
+					left: 0
+					z-index: 3
+					img
+						width: 100%
+						height: auto
+						display: block
+
+					+rwd($gridSm + 'px')
+						width: 70%
+
+
+				/*a
+					display: block
+					position: absolute
+					width: 100%
+					height: 100%
+					top: 0
+					left: 0
+					z-index: 4*/
+
+
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					top: 0
+					bottom: 0
+					height: 100%
+					width: 41.66%
+					left: 0
+					z-index: 2
+					background: rgb(255,255,255)
+					background: linear-gradient(90deg, rgba(255,255,255,1) 0, rgba(255,255,255,.9) 60%, rgba(255,255,255,0) 100%)
+
+					+rwd($gridLg + 'px')
+						width: 60%
+
+					+rwd($gridMd + 'px')
+						width: 100%
+						height: 100%
+						top: auto
+						bottom: 0
+						background: rgb(255,255,255)
+						background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0) 90%)
+
+
+				.banner-img
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					position: absolute
+					object-fit: cover
+					object-position: center
+					display: block
+					z-index: 1
+					transition: all .3s ease-out
+
+					+rwd($gridMd + 'px')
+						height: 50%
+
+
+			.slick-dots
+				width: 100%
+				top: inherit
+				right: 0
+				bottom: 40px
+				transform: translateY(-50%)
+				position: absolute
+				display: flex
+				justify-content: center
+				li
+					width: 40px
+					height: 5px
+					margin: 0 5px
+					display: flex
+					align-items: center
+					justify-content: center
+					position: relative
+					transition: .3s ease-out
+
+
+					button
+						width: 40px
+						height: 5px
+						background: #D4C4A3
+						padding: 0
+						&:before
+							display: none
+
+					&.slick-active
+						button
+							background: $mainColor1
+
+
+		.idx-banner
+			.slider
+				.slider-full
+					.slogan
+						width: 70%
+						h2
+							+font-size(36px)
+
+.idx-content--bottomBorder
+	border-bottom: solid 1px #E1E1E1
+	padding: 90px 0
+
+	+rwd($gridLg + 'px')
+		padding: 60px 0
+
+.idx-content
+	width: 100%
+	flex-wrap: wrap
+
+	&.flex
+		+rwd($gridSm + 'px')
+			padding: 30px
+
+	.all-width
+		justify-content: space-between
+
+		+rwd($gridLg2 + 'px')
+			flex-wrap: wrap
+			.idx-content2--news
+				width: 100%
+
+			.idx-content2--plan
+				width: 90%
+				margin: 60px auto 0
+
+		+rwd($gridSm + 'px')
+			.idx-content2--plan
+				width: 100%
+
+	.idx-content__box
+		padding: 100px 0
+
+	.idx-content__slider
+		.slick-arrow
+			width: 30px !important
+			height: 30px !important
+
+		.item
+			width: 100%
+
+			figure
+				display: block
+				width: 100%
+				padding-top: 37.5%
+				position: relative
+
+				a
+					display: block
+					position: absolute
+					z-index: 2
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+
+				img
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					object-fit: cover
+					object-position: center
+					z-index: 1
+
+.idx-block
+	width: 50%
+	min-width: 50%
+	position: relative
+	cursor: pointer
+
+	&:hover
+		&:before, .idx-block__text
+			opacity: 0
+			visibility: hidden
+
+	&:before, .idx-block__text
+		transition: .3s ease-out
+
+	&:before
+		content: ''
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 2
+		background: rgba(0,0,0,.5)
+
+	.idx-block__text
+		align-items: center
+		justify-content: center
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		z-index: 3
+
+	.idx-block__box
+		color: #fff
+		text-align: center
+
+	.idx-block__title
+		+font-size(30px)
+		font-weight: 500
+
+	.idx-block__en
+		margin-top: 10px
+
+	i
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 54px
+		height: 54px
+		border-radius: 54px
+		color: #fff
+		background: $mainColor1
+		margin: 20px auto 0
+
+	+rwd($gridLg + 'px')
+		&:before, .idx-block__text
+			display: none
+			visibility: hidden
+
+	+rwd($gridSm + 'px')
+		width: 100%
+
+.idx-content2
+	width: 100%
+	align-items: flex-start
+	.idx-content2__top
+	.idx-content2__title
+		align-items: flex-end
+		.text
+			+font-size2(30px,30px)
+			span
+				color: $mainColor1
+				margin-top: 5px
+		.line
+			width: 1px
+			height: 20px
+			transform: rotate(-45deg)
+			background: #BCBCBC
+			margin: 0 20px
+
+		+rwd($gridSm + 'px')
+			justify-content: center
+
+	.idx-content2__text
+
+	.idx-content2__more
+		width: 175px
+		height: 45px
+		border-radius: 45px
+		background: $mainColor1
+		color: #fff
+		justify-content: center
+		align-items: center
+		margin: 45px auto 0
+
+		&:hover
+			transform: translateY(5px)
+			opacity: .8
+
+.idx-content2--news
+	width: 47.18%
+
+.idx-content2--plan
+	width: 41.25%
+	margin-right: 5%
+
+.idx-news
+	width: 100%
+	margin-top: 40px
+	dl
+		display: flex
+		width: 100%
+		padding: 20px 0
+		margin: 0
+		border-bottom: solid 1px #D5D5D5
+
+		dd
+			width: calc( 100% - 135px )
+			display: block
+			padding: 0
+			margin: 0 0 0 30px
+
+		+rwd($gridSmm + 'px')
+			flex-wrap: wrap
+			dd
+				width: 100%
+				margin: 5px 0 0 0
+
+	.idx-news__category
+		width: 105px
+		min-width: 105px
+		height: 42px
+		color: #fff
+		align-items: center
+		justify-content: center
+
+	.idx-news__date
+
+	.idx-news__link
+		+ellipsis(1)
+		width: 100%
+		display: inline-block
+
+		+rwd($gridSm + 'px')
+			+ellipsis(3)
+			display: block
+			white-space: normal
+
+.idx-plan
+	width: 100%
+	margin-top: 40px
+	border: solid 1px #D2D2D2
+	border-radius: 30px
+	padding: 41px 70px 80px 70px
+
+	.idx-plan-slider
+		.slick-arrow
+			width: 54px
+			height: 54px
+			border-radius: 100%
+			box-shadow: 0 3px 6px rgba(0,0,0,.4)
+
+		.slick-prev
+			left: -97px
+			background: url('../images/plan-left.svg') no-repeat #fff center
+
+		.slick-next
+			right: -97px
+			background: url('../images/plan-right.svg') no-repeat #fff center
+
+		.slick-dots
+			bottom: -50px
+			li
+				width: 10px
+				height: 10px
+				border-radius: 100%
+				background: #CFCFCF
+				margin: 0 6px
+
+
+
+				button
+					display: none
+
+				&.slick-active
+					background: $mainColor1
+
+	.idx-plan-title
+		+font-size(24px)
+
+		&:after
+			content: ''
+			display: block
+			width: 30px
+			height: 3px
+			background: $mainColor1
+			margin-top: 15px
+
+	.idx-plan-text
+		+ellipsis(3)
+		margin-top: 24px
+		+font-size2(16px,30px)
+		color: #666666
+		padding-right: 20px
+
+	.idx-plan-icon
+		margin-top: 30px
+		.row
+			align-items: center
+			margin-right: 15px
+
+			i
+				color: $mainColor1
+				margin-right: 10px
+
+	+rwd($gridLg + 'px')
+		.idx-plan-title
+			+font-size(22px)
+		.idx-plan-text
+			+ellipsis(2)
+
+		.idx-plan-icon
+			flex-wrap: wrap
+			.row
+				margin-top: 7px
+
+	+rwd($gridSm + 'px')
+		padding: 40px 40px 90px 40px
+
+
+.idx-about
+	width: 100%
+	padding: 100px 0
+	align-items: center
+
+	.idx-about__img
+		width: 50%
+		min-width: 50%
+		position: relative
+		z-index: 1
+
+		figure
+			width: 100%
+			position: relative
+			overflow: hidden
+			margin: 60px 0 0 40px
+			border: solid 10px #fff
+			z-index: 2
+			box-sizing: border-box
+			width: calc( 100% - 50px )
+			height: calc( 100% - 50px )
+
+			img
+				width: 100%
+				height: auto
+				display: block
+
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			z-index: 1
+			left: 0
+			right: 40px
+			bottom: 80px
+			top: 0
+			width: calc( 100% - 60px )
+			height: calc( 100% - 80px )
+			background: $mainColor1
+
+	.idx-about__info
+		width: 50%
+		position: relative
+		z-index: 2
+		align-items: center
+		margin-left: 80px
+		padding-right: 100px
+
+		+rwd($gridLg + 'px')
+			padding-right: 0
+			margin-left: 40px
+
+	.idx-about__wrap
+
+		.title
+			font-weight: bold
+			+font-size(30px)
+
+
+		.text
+			+font-size2(16px,30px)
+			margin: 35px 0
+
+
+		.link
+			width: 175px
+			height: 45px
+			border-radius: 45px
+			background: $mainColor1
+			color: #fff
+			justify-content: center
+			align-items: center
+			margin: 45px 0 0 0
+
+			&:hover
+				transform: translateY(5px)
+				opacity: .8
+
+		+rwd($gridLg + 'px')
+			.title
+				+font-size(24px)
+
+			.text
+				+ellipsis(3)
+
+	+rwd($gridSm + 'px')
+		width: 100%
+		flex-wrap: wrap
+		.idx-about__img
+			width: 100%
+
+		.idx-about__info
+			width: 100%
+			margin-left: 0
+			margin-top: 60px
+
+		.idx-about__wrap
+			.title
+				text-align: center
+			.link
+				margin: 45px auto 0

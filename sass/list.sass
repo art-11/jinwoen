@@ -1,0 +1,153 @@
+
+// /* ====================== */
+// /* 圖文及文字列表切換效果    */
+// /* ====================== */
+// class說明：
+// .opt-box 切換控制列
+// .card 卡片圖文
+// .list 文字列表
+
+
+@import default
+.wrapper 
+	width: 100%
+	max-width: 1200px
+	margin: 0 auto
+
+
+/* 圖文切換按鈕列 */
+.opt-box
+	background:#f9f9f9
+	padding: 15px
+	margin: 20px 0
+	&__array
+		flex: 1
+		text-align: right
+	li
+		display: inline-block
+		margin-left: 10px
+		.hide
+			display: inline-block
+			+rwd(640px)
+				display: none
+
+.arryicon
+	vertical-align: baseline
+	font-size: 18px
+	+rwd(640px)
+		font-size: 25px
+
+.switch-btn
+	color: #888
+	vertical-align: top
+	&.current
+		color: #62a6f2
+.a-cover
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	z-index: 99
+
+
+/* 單一則 */
+.single
+	border: 1px solid #cccccc
+	position: relative
+	display: inline-block
+	width: calc(100%/4 - 20px)
+	margin: 0 20px 40px 0
+	vertical-align: top
+	transition: all .5s ease-in-out
+	&:nth-child(4n)
+		margin-right: 0
+	+rwd(768px)
+		width: calc(100%/2 - 15px)
+		&:nth-child(2n)
+			margin-right: 0
+	+rwd(640px)
+		display: block
+		width: 100%
+		margin: 0 0 20px
+
+	&__img
+		position: relative
+		overflow: hidden
+		img
+			width: 100%
+			height: auto
+			vertical-align: top
+			transition: all 1s ease-in-out
+			transition-delay: .3s
+	&__body
+		padding: 10px
+	.single-info
+		&__tip
+			+font-size(15px)
+			color: #666
+		&__title
+			+font-size(18px)
+			font-weight: bold
+			color: #000
+		&__txt
+			+font-size(16px)
+			color: #333
+			margin-bottom: 10px
+		&__btnbox
+			padding: 0
+			.btn
+				width: 100%
+				border-radius: 6px
+				margin: 0
+				&--primary
+					color: #fff
+					background-color: #0275d8
+	+rwd2(1024px)
+		&:hover
+			box-shadow: 0 0 8px rgba(0,0,0,.2)
+			.single__img
+				img
+					transform: scale(1.1)
+			.single-info
+				&__btnbox
+					.btn
+						&--primary
+							background-color: #777
+
+
+
+/* 區塊切換 */
+.listbox
+	margin-bottom: 30px
+	&--row
+		display: block !important
+		opacity: 1 !important
+		animation-name: fadeIn
+		animation-duration: 1s
+		animation-fill-mode: both
+		.single
+			width: 100%
+			margin: 0 auto 20px
+			border-width: 0 0 1px
+			&__img
+				display: none
+			.single-info
+				&__btnbox
+					display: none
+			+rwd2(1024px)
+				&:hover
+					transform: scale(1)
+					box-shadow: none
+					background: rgba(0,0,0,.03)
+	@-webkit-keyframes fadeIn
+		0%
+			opacity: 0
+		100%
+			opacity: 1
+	@keyframes fadeIn
+		0%
+			opacity: 0
+		100%
+			opacity: 1
+

@@ -1,0 +1,813 @@
+//This is sass file
+/*===================layout===================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap')
+
+*
+	box-sizing: border-box
+
+body, html
+	font-family: $font
+	color: $textColor
+	line-height: $fontLh
+	font-size: $fontSz
+	position: relative
+	letter-spacing: 0
+	-webkit-text-size-adjust: none
+	-webkit-overflow-scrolling: touch
+	z-index: 2
+	height: 100%
+	+rwd($gridSm + 'px')
+		font-size: 15px
+
+
+.body-hidden
+	height: 100%
+	overflow: hidden
+a
+	color: $textColor
+	text-decoration: none
+	transition: all .3s ease-out
+
+	&:hover
+		color: $textHColor
+		text-decoration: none
+		transition: all .3s ease-out
+
+	&:focus
+		outline: none
+
+
+.all-width
+	width: 100%
+	max-width: $wrapWidth + px
+	margin: auto
+
+	+rwd($gridXL + 'px')
+		padding: 0 60px
+
+	+rwd($gridLg + 'px')
+		padding: 0 30px
+
+
+img.ocenter
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	object-fit: cover
+	object-position: center
+
+.noscroll
+	overflow: hidden
+
+
+.all-width2
+	width: 100%
+	max-width: 1300px
+	margin: auto
+
+	+rwd($gridLg + 140 + 'px')
+		padding: 0 6.4vw
+.grid
+	display: grid
+.hide
+	display: none
+.flex
+	display: flex
+.edit
+	img,iframe
+		max-width: 100%
+		height: auto
+
+/*IE 滿版背景圖晃動 */
+@media screen and (-ms-high-contrast: active),(-ms-high-contrast: none)
+	html
+		overflow: hidden
+		height: 100%
+	body
+		overflow: auto
+		height: 100%
+
+@keyframes scrolltop
+	0%
+		background-position: 0 80pxfooter
+
+	75%
+		background-position: 0 0
+
+	100%
+		background-position: 0 -80px
+
+.more.more-black
+	color: #000
+	i
+		border: solid 1px #000
+
+	&:hover
+		color: #000
+		i
+			background: #000
+			color: #fff
+
+.more
+	align-items: center
+	color: #fff
+	+font-size(18px)
+	i
+		display: flex
+		min-width: 64px
+		width: 64px
+		height: 64px
+		align-items: center
+		justify-content: center
+		border: solid 1px #fff
+		border-radius: 100%
+		margin-right: 20px
+		transition: .3s ease-out
+
+	&:hover
+		color: #fff
+		transform: translateX(5px)
+		i
+			background: #fff
+			color: #000
+
+	+rwd($gridLg + 'px')
+		+font-size(16px)
+		i
+			min-width: 44px
+			width: 44px
+			height: 44px
+			margin-right: 10px
+
+.fancybox__backdrop
+
+.fancybox__slide
+	+rwd($gridLg + 'px')
+		padding: 60px !important
+
+	+rwd($gridSm + 'px')
+		padding: 60px 30px !important
+
+.fancybox__content
+	background: none !important
+	padding: 0 !important
+	width: 100%
+
+	input:focus
+		outline: none !important
+
+	.search-field
+		width: 100%
+		height: 60px
+		border-width: 0 0 1px 0
+		borber-bottom: solid #fff
+		background: none
+		+placeholder-color(#9B9B9B)
+		+font-size(30px)
+		color: #fff
+		appearance: none
+		+rwd($gridLg + 'px')
+			+font-size(24px)
+
+.fancybox__content > .carousel__button.is-close
+	color: #000 !important
+
+.wrapper
+	position: relative
+	z-index: 1
+	padding-top: 100px
+
+	+rwd($gridLg + 'px')
+		padding-top: 80px
+
+
+	+rwd($gridSm + 'px')
+
+.side-link
+	position: fixed
+	align-content: center
+	flex-wrap: wrap
+	width: 64px
+	height: 100%
+	top: 0
+	bottom: 0
+	right: 30px
+	z-index: 3
+
+	.side-link__item
+		width: 64px
+		height: 64px
+		border-radius: 100%
+		margin: 5px 0
+		align-items: center
+		justify-content: center
+
+	.side-link__item--LINE
+		background: #00C300
+
+	.side-link__item--FB
+		background: #1877F2
+
+	+rwd($gridLg + 'px')
+		width: 50px
+		.side-link__item
+			width: 50px
+			height: 50px
+
+	+rwd($gridSm + 'px')
+		right: 10px
+
+.scroll-top
+	position: fixed
+	right: 30px
+	bottom: 30px
+	z-index: 5
+	justify-content: center
+	align-items: center
+	flex-wrap: wrap
+	cursor: pointer
+	border-radius: 100%
+	transition: .3s ease-out
+	width: 78px
+	height: 78px
+	text-align: center
+	border-radius: 100%
+	background: #fff
+	font-weight: 500
+	box-shadow: 0 5px 6px rgba(0,0,0,.3)
+
+	i
+		font-size: 24px
+
+	&:hover
+		transform: translateY(5px)
+
+
+	+rwd($gridLg + 'px')
+		background: #fff
+		width: 50px
+		height: 50px
+		border-radius: 100%
+		display: flex
+		align-items: center
+		justify-content: center
+		right: 30px
+		bottom: 30px
+		box-shadow: 0 0 30px rgba(0,0,0,.3)
+		font-size: 13px
+
+		span
+			height: auto
+			display: inline
+
+		i
+			font-size: 16px
+			display: inline
+			height: auto
+
+		&:hover
+			color: #9e9e9e
+			i
+				color: #9e9e9e
+
+	+rwd($gridSm + 'px')
+		right: 10px
+		bottom: 10px
+
+header.fixed
+	background: rgba(255,255,255,1)
+	height: 80px
+	.logo
+		width: 360px
+	nav
+		top: 85px
+		&.current
+			top: 80px
+
+		.nav__item
+			&:hover
+				.nav_inner
+					top: 80px
+
+		.nav_inner
+			top: 80px
+
+	+rwd($gridLg + 'px')
+		height: 80px
+		.logo
+			width: 300px
+		nav
+			.nav__item
+				&:hover
+					.nav_inner
+						top: 80px
+
+header
+	height: 100px
+	width: 100%
+	position: fixed
+	top: 0
+	left: 0
+	background: rgba(255,255,255,1)
+	padding: 0 60px
+	align-items: center
+	justify-content: space-between
+	z-index: 10
+	transition: .3s ease-out
+	border-top: solid 5px $mainColor1
+	border-bottom: solid 1px #E1E1E1
+
+
+	+rwd($gridXL2 + 'px')
+		padding: 0 30px
+
+	+rwd($gridSm + 'px')
+		padding: 0 15px
+
+	.logo
+		width: 389px
+		overflow: hidden
+		margin-right: 30px
+		transition: .3s ease
+
+		h1
+			position: absolute
+			top: -999px
+
+		picture
+			display: block
+
+		img
+			width: 100%
+			height: auto
+			display: block
+
+		+rwd($gridLg + 'px')
+			width: 300px
+
+		+rwd($gridSm + 'px')
+
+
+	.head-right
+		height: inherit
+		align-items: center
+
+
+	.head-line
+		width: 1px
+		min-width: 1px
+		margin: 0 30px 0 15px
+		height: 30px
+		background: #CCCCCC
+
+		+rwd($gridLg + 'px')
+			display: none
+
+	.head-link
+		align-items: center
+		letter-spacing: 0.1em
+
+		i
+			margin-right: 10px
+			margin-top: 5px
+
+
+
+	nav
+		align-items: center
+		height: inherit
+
+		.nav__item
+			position: relative
+			padding: 0 15px
+			height: inherit
+			letter-spacing: 0.1em
+
+			&:before
+				content: ''
+				display: block
+				width: 0
+				height: 5px
+				position: absolute
+				bottom: 0
+				left: 0
+				background: $mainColor1
+				transition: .3s ease-out
+
+			&:hover
+				.nav_inner
+					top: 100px
+					opacity: 1
+					visibility: visible
+
+				&:before
+					width: 100%
+
+			&.nav__item--login
+				&:before
+					display: none
+				.nav__link
+					display: flex
+
+					&:before
+						content: ''
+						width: 1px
+						height: 30px
+						display: block
+						background: $borderColor
+						margin-right: 30px
+
+					&.head-link__hidden
+						display: none
+
+			+rwd($gridXL + 'px')
+				padding: 0 10px
+
+			+rwd($gridLg + 'px')
+				&:last-child
+					display: block
+
+				&.nav__item--login
+					.nav__link
+						&:before
+							display: none
+
+					.head-link
+						i
+							display: none
+
+		.nav__link
+			height: inherit
+			display: table-cell
+			vertical-align: middle
+
+		.nav_inner
+			position: absolute
+			border-top: solid 5px $mainColor1
+			top: 90px
+			left: 50%
+			transform: translateX(-50%)
+			width: 304px
+			background: #fff
+			opacity: 0
+			visibility: hidden
+			transition: .3s ease-in
+			box-shadow: 0 5px 30px rgba(0,0,0,.05)
+
+			.nav_inner-link
+				padding: 15px 30px
+				+font-size(18px)
+				font-weight: normal
+				color: #000 !important
+				display: block
+				border-bottom: solid 1px #efefef
+
+				&:last-child
+					border-bottom: 0
+
+				&:hover
+					color: $mainColor1 !important
+					border-bottom: solid 1px $mainColor1
+
+		+rwd($gridLg + 'px')
+			position: fixed
+			width: 100%
+			left: 0
+			top: 80px
+			background: rgba(35,110,180,.95)
+			height: auto
+			padding: 30px
+			opacity: 0
+			visibility: hidden
+			transition: .2s ease-in
+			flex-wrap: wrap
+
+
+			.nav__item
+				display: block
+				width: 100%
+				font-weight: normal
+				&:before
+					display: none
+				a
+					color: #fff
+					padding: 15px 5px
+					+font-size(20px)
+					border-bottom: solid 1px #448dd2
+					display: flex
+					justify-content: space-between
+					align-items: center
+					letter-spacing: 0.01em
+
+					&:after
+						content: ''
+						display: block
+						width: 8px
+						height: 8px
+						border: solid 1px #fff
+						transform: rotate(45deg)
+						border-width: 1px 1px 0 0
+
+			.nav_inner
+				display: none
+
+			&.current
+				top: 80px
+				opacity: 1
+				visibility: visible
+
+		+rwd($gridMd + 'px')
+			top: 85px
+			&.current
+				top: 80px
+
+
+	.mobile-btn
+		width: 30px
+		height: 30px
+		border-radius: 100%
+		position: relative
+		display: none
+		margin-left: 10px
+		margin-right: 20px
+		align-items: center
+		justify-content: center
+		cursor: pointer
+		z-index: 3
+
+		.mobile-btn__burger
+			width: 30px
+			height: 1px
+			border-radius: 5px
+			transition: all 0.5s ease-in-out
+
+			&:before, &:after
+				content: ''
+				display: block
+				background: #000
+				width: 30px
+				height: 1px
+				position: absolute
+				border-radius: 5px
+				transition: all 0.5s ease-in-out
+
+			&:before
+				transform: translateY(-3px)
+
+			&:after
+				transform: translateY(3px)
+
+		&.current
+			display: flex
+			.mobile-btn__burger
+				transform: translateX(-15px)
+				background: transparent
+				&:before,&:after
+					background: #000
+				&:before
+					transform: rotate(45deg) translate(10px, -10px)
+
+				&:after
+					transform: rotate(-45deg) translate(10px, 10px)
+
+		+rwd($gridLg + 'px')
+			display: flex
+
+	+rwd($wrapWidth + 140px + 'px')
+		.all-width
+			padding: 0 70px
+
+	+rwd($gridLg + 'px')
+		background: #fff
+		height: 80px
+		&:before
+			display: none
+		.all-width
+			padding: 0 30px
+			.logo
+				svg
+					fill: #000
+
+			.head-sub
+				width: auto
+				max-width: 215px
+
+	+rwd($gridMd + 'px')
+		.searchbox
+			.searchbox-form
+				width: 100%
+				flex-wrap: wrap
+				padding: 0 30px
+				.s-btn
+					width: 100%
+					margin: 10px 0 0 0
+
+	+rwd($gridSm + 'px')
+		.all-width
+			padding: 0 15px
+
+	+rwd($gridSmm + 'px')
+		h1
+			display: none
+
+footer
+	background: #333333
+	width: 100%
+	padding: 100px 0 0 0
+	background: url('../images/foot-bg.jpg') no-repeat
+	background-size: cover
+
+	.foot-wrap
+		display: grid
+		grid-template-columns: repeat(3,1fr)
+		grid-column-gap: 8.416vw
+		width: 100%
+		padding-right: 120px
+		padding-bottom: 80px
+		align-items: flex-start
+		border-bottom: solid 1px #7DB4E8
+
+	.foot-info
+		min-width: 435px
+
+	.foot-logo
+		max-width: 405px
+		width: 100%
+
+		img
+			width: 100%
+			height: auto
+			display: block
+			background: none
+
+	.foot-list
+		width: 100%
+		li
+			color: #fff
+			+font-size2(18px,30px)
+			margin: 5px 0
+			letter-spacing: 0.06em
+
+			i
+				color: #fff
+				margin-right: 5px
+				min-width: 30px
+				display: flex
+				justify-content: center
+				margin-top: 5px
+
+			&:nth-child(2),&:nth-child(3),&:nth-child(4)
+				align-items: center
+
+	.foot-link
+		display: grid
+		grid-template-columns: repeat(4,1fr)
+		grid-template-rows: auto
+		grid-row-gap: 30px
+		width: 100%
+		+font-size(16px)
+		margin-top: 10px
+		min-width: 420px
+		a
+			color: #fff
+
+			&:hover
+				opacity: .8
+
+	.foot-btm
+		padding: 75px 0
+		+font-size(16px)
+		letter-spacing: 0.06em
+		color: #fff
+
+		span
+			padding-right: 20px
+
+		a
+			color: #fff
+
+	+rwd($gridXL2 + 'px')
+		padding: 60px 0 0 0
+		.foot-wrap
+			grid-template-columns: repeat(2,1fr)
+			padding: 0 0 60px 0
+
+		.foot-logo
+			grid-column-start: 1
+			grid-column-end: 3
+			margin-bottom: 30px
+
+		.foot-info
+			min-width: 335px
+
+	+rwd($gridLg + 'px')
+		.foot-wrap
+			justify-content: center
+			display: block
+		.foot-link
+			display: none
+
+		.foot-logo
+
+		.foot-list
+			margin: auto
+
+			li
+				+font-size2(16px,24px)
+
+		.foot-info
+			min-width: inherit
+
+	+rwd($gridMd + 'px')
+		.all-width
+			span
+				margin-bottom: 10px
+
+	+rwd($gridSm + 'px')
+		.foot-logo
+			max-width: 280px
+		.foot-wrap
+			grid-template-columns: 1fr
+
+		.foot-btm
+			letter-spacing: 0
+
+		.foot-share
+			display: flex
+			margin-top: 30px
+			i
+				margin-left: 15px
+
+#breadcrumb
+	width: 100%
+	height: 60px
+	+rwd($gridLg + 'px')
+		display: none
+
+	.all-width
+		height: inherit
+
+	.list
+		width: 100%
+		align-items: center
+		justify-content: flex-end
+		height: inherit
+
+		li
+			margin-right: 28px
+			position: relative
+
+			.fa-house
+				color: $mainColor1
+				margin: 3px 10px 0 0
+				font-size: 14px
+
+			.fa-chevron-right
+				position: absolute
+				right: -23px
+				top: 2px
+				color: #000
+				font-size: 12px
+
+			a
+				color: #000
+
+
+			&:first-child
+				display: flex
+
+				.fa-chevron-right
+					color: #000
+					margin-right: 5px
+					margin-top: 2px
+
+			&:last-child
+				margin-right: 0
+				.fa-chevron-right
+					display: none
+
+			+rwd($gridLg + 'px')
+				display: none
+				&:first-child
+					display: flex
+
+				&:last-child
+					display: block
+
+			+rwd($gridSm + 'px')
+				+font-size(14px)
+				margin-right: 30px
+				&:before
+					right: -15px
+					height: 10px
+				&:last-child
+					margin-right: 0
+
+
+
+
+
+

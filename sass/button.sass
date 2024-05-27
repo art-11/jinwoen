@@ -1,0 +1,49 @@
+@import default
+
+.btnbox
+	width: 100%
+	padding: 30px 10px
+	text-align: center
+
+/* button-set */
+.btn
+	@extend %Btn
+	background-color: $btnDefaultColor
+	border-color: $btnDefaultLineColor
+	color: $btnDefaultTextColor
+	border-radius: $btnDefaultRadius
+	&:before
+		font-size: $btnIconSize
+		margin: -2px 5px 0 0
+		display: inline-block
+		vertical-align: middle	
+
+	&:hover
+		background-color: $btnDefaultHoverColor
+		border-color: $btnDefaultHoverLineColor
+		color: $btnDefaultHoverTextColor
+			
+	span
+		display: inline-block
+		vertical-align: middle
+		line-height: $btnIconSize
+	&--sm
+		width: $btnSmWidth
+		height: $btnSmHeight
+		margin: 5px
+		padding: (($btnSmHeight - $btnSmIconSize)/2) 10px
+		&__icon
+			font-size: $btnSmIconSize
+		span
+			line-height: $btnSmIconSize
+	&--submit
+		background-color: #d60d0d
+		border-color: #d60d0d
+		color: #fff
+	&--search
+		background-color: #3ec5f7
+		border-color: #3ec5f7
+		color: #fff
+	//滿版button
+	&--full
+		width: calc(100% - #{$btnLineWidth}*2)

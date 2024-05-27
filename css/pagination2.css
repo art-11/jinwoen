@@ -1,0 +1,50 @@
+.pagination2 {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.pagination2 a:link,
+.pagination2 a:visited {
+  color: #252525;
+}
+
+.pagination2 a:hover,
+.pagination2 a:active {
+  color: rgba(37, 37, 37, 0.8);
+}
+
+.pagination2 > li {
+  display: inline;
+}
+
+.pagination2 > a {
+  width: 26px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 3px;
+  background: #eaedf2;
+  font-size: 16px;
+  line-height: 30px;
+  overflow: hidden;
+}
+
+.pagination2 > a:first-child {
+  margin-left: 0;
+}
+
+.pagination2 > a.active {
+  background: #a4d1f7;
+  color: #fff;
+}
+
+.pagination2 > a.disabled {
+  color: #ccc;
+}
+
+.pagination2 > a:hover:not([class*="disabled"]) {
+  background: #6293ec;
+  color: #fff;
+}
+
+/*# sourceMappingURL=pagination2.css.map */

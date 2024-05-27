@@ -1,0 +1,102 @@
+//This is sass file
+@import default
+
+// ======================
+// 容器/頁面寬度 inner
+// ======================
+$inner-xxl: 1300px
+$inner-xl: 1200px
+$inner-lg: 1024px
+$inner-md: 768px
+$inner-sm: 640px
+$inner-ss: 480px
+
+$slick-arrow-color: #fff
+$subtitle-size: 30px
+$subtitle-color: #fff
+$subtitle-color2: #000
+
+.banner
+    width: 100%
+    position: relative
+    .slick-arrow
+        position: absolute
+        top: 45%
+        z-index: 10
+        width: 50px
+        height: 50px
+        font-size: 60px
+        font-family: 'icomoon';
+        color: $slick-arrow-color
+        cursor: pointer
+        +rwd($inner-sm)
+            font-size: 40px
+            top: inherit
+            bottom: 30px
+    .prev, .next
+        position: absolute !important
+        +iconpc(b,'\f104',0,100%,inherit,auto,auto)
+    .prev
+        left: 20px
+        &:before
+            content: "\f104"
+    .next
+        right: 20px
+        &:before
+            content: "\f105"
+    &__item
+        position: relative
+        img
+            width: 100%
+            height: auto
+            display: block
+            margin: auto
+        .slogan
+            position: absolute
+            top: 14vw
+            left: 18vw
+            width: 470px
+            z-index: 99
+            +rwd($inner-sm)
+                top: 15vw
+                left: 7vw
+                width: 380px
+            &__title, &__subtitle
+                left: 0.1rem
+                color: $subtitle-color
+                display: block
+            &__title
+                +font-size2(55px,75px)
+                letter-spacing: 0.1rem
+                +rwd($inner-sm)
+                    +font-size2($subtitle-size,30px)
+                    letter-spacing: normal
+            &__subtitle
+                margin-bottom: 20px
+                +font-size(24px)
+                letter-spacing: 0.15rem
+                +rwd($inner-sm)
+                    +font-size(15px)
+                    letter-spacing: normal
+                    margin-bottom: 15px
+            &__but
+                border: 1px $subtitle-color solid
+                border-radius: 6px
+                padding: 10px 40px 10px 60px
+                background: rgba($subtitle-color,0.15)
+                +font-size(24px)
+                letter-spacing: 0.1rem
+                padding-left: -0.1rem
+                color: $subtitle-color
+                +bficon(30px,30px,'\f101',100%,3px,30px)
+                +rwd2($inner-lg)
+                    &:hover
+                        background: rgba($subtitle-color,1)
+                        color: $subtitle-color2
+                +rwd($inner-md)
+                    background: rgba($subtitle-color,1)
+                    color: $subtitle-color2
+                +rwd($inner-sm)
+                    padding: 5px 15px 5px 35px
+                    +font-size(15px)
+                    +bficon(20px,20px,'\f101',100%,2px,10px)

@@ -1,0 +1,241 @@
+@charset "UTF-8";
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 圖文切換按鈕列 */
+.opt-box {
+  background: #f9f9f9;
+  padding: 15px;
+  margin: 20px 0;
+}
+
+.opt-box__array {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: right;
+}
+
+.opt-box li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.opt-box li .hide {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 640px) {
+  .opt-box li .hide {
+    display: none;
+  }
+}
+
+.arryicon {
+  vertical-align: baseline;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 640px) {
+  .arryicon {
+    font-size: 25px;
+  }
+}
+
+.switch-btn {
+  color: #888;
+  vertical-align: top;
+}
+
+.switch-btn.current {
+  color: #62a6f2;
+}
+
+/* 區塊切換 */
+.listbox {
+  margin-bottom: 30px;
+}
+
+.listbox__open {
+  display: block !important;
+  opacity: 1 !important;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.listbox__img {
+  display: none;
+}
+
+.listbox__list {
+  display: none;
+}
+
+/* 圖文 */
+.card {
+  display: inline-block;
+  width: calc(100%/4 - 20px);
+  margin: 0 20px 40px 0;
+  vertical-align: top;
+}
+
+.card:nth-child(4n) {
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: calc(100%/2 - 15px);
+  }
+  .card:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .card {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px;
+  }
+}
+
+/* 文字列 */
+.list {
+  width: 100%;
+}
+
+/*內容*/
+.card__body, .list__body {
+  padding: 10px;
+}
+
+.card__tip, .list__tip {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.17188rem;
+  color: #666;
+}
+
+.card__title, .list__title {
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.40625rem;
+  font-weight: bold;
+}
+
+.card__title a, .list__title a {
+  color: #000;
+}
+
+.card__txt, .list__txt {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card__img {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__img img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+/*詳細頁*/
+.list-detail {
+  width: 100%;
+  display: block;
+  position: relative;
+  text-align: right;
+}
+
+.list-detail__title {
+  margin-bottom: 5px;
+  margin-bottom-font-size: 30px;
+  margin-bottom-font-size: 1.875rem;
+  margin-bottom-line-height: 2.34375rem;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.list-detail__tip {
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.17188rem;
+  color: #666666;
+}
+
+.edit {
+  border-bottom: 1px solid #ccc;
+}
+
+.edit__list-detail {
+  padding: 10px;
+}
+
+.edit img {
+  max-width: 100%;
+}
+
+/*裝飾*/
+.cover-border {
+  border: 1px solid #cccccc;
+}
+
+.cover-underline {
+  border-bottom: 1px solid #cccccc;
+}
+
+/*按鈕*/
+.card__btn {
+  display: block;
+  padding: 0.5em 0.75em;
+  border-radius: .25em;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.card__btn--primary {
+  color: #fff;
+  background-color: #0275d8;
+}

@@ -1,0 +1,58 @@
+@import default
+//寬度
+=create-mq($breakpoint, $min-or-max)
+	@if ($breakpoint == 1920)
+		@content
+	@else
+		@media screen and (#{$min-or-max}-width: $breakpoint *1px)
+			@content
+//產生col
+=create-col-classes($modifier, $cols, $breakpoint)
+	+create-mq($breakpoint, 'max')
+		&__col#{$modifier}-offset0
+			margin-left: 0
+		@for $i from 1 through $cols
+			&__col#{$modifier}#{$i}
+				// flex-basis: (100 / ($cols / $i) ) * 1%
+				width: (100 / ($cols / $i) ) * 1%
+			&__col#{$modifier}-offset#{$i}
+				margin-left: (100 / ($cols / $i) ) * 1%
+		&__start#{$modifier}
+			justify-content: flex-start
+			text-align: left
+		&__center#{$modifier}
+			justify-content: center
+			text-align: center
+		&__end#{$modifier}
+			justify-content: flex-end
+			text-align: right
+		&__top#{$modifier}
+			align-items: flex-start
+		&__middle#{$modifier}
+			align-items: center
+		&__bottom#{$modifier}
+			align-items: flex-end
+		&__around#{$modifier}
+			justify-content: space-around
+		&__between#{$modifier}
+			justify-content: space-between
+//產生各寬度class
+@each $modifier , $breakpoint in $grid-props
+	@if ($modifier == '')
+		$modifier: '-xxl'
+	+create-mq($breakpoint - 1, 'max')
+		.hidden#{$modifier}-down
+			display: none !important
+	+create-mq($breakpoint, 'min')
+		.hidden#{$modifier}-up
+			display: none !important
+
+.grid
+	&__row
+		display: flex
+		flex-wrap: wrap
+		width: 100%
+		box-sizing: border-box
+	@each $modifier , $breakpoint in $grid-props
+		+create-col-classes($modifier, $gridCols, $breakpoint)
+

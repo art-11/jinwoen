@@ -1,0 +1,165 @@
+
+// /* ====================== */
+// /* 圖文及文字列表切換效果    */
+// /* ====================== */
+// class說明：
+// .opt-box 切換控制列
+// .card 卡片圖文
+// .list 文字列表
+
+
+@import default
+.wrapper 
+	width: 100%
+	max-width: 1200px
+	margin: 0 auto
+
+
+/* 圖文切換按鈕列 */
+.opt-box
+	background:#f9f9f9
+	padding: 15px
+	margin: 20px 0
+	&__array
+		flex: 1
+		text-align: right
+	li
+		display: inline-block
+		margin-left: 10px
+		.hide
+			display: inline-block
+			+rwd(640px)
+				display: none
+
+.arryicon
+	vertical-align: baseline
+	font-size: 18px
+	+rwd(640px)
+		font-size: 25px
+
+.switch-btn
+	color: #888
+	vertical-align: top
+	&.current
+		color: #62a6f2
+
+
+/* 區塊切換 */
+.listbox
+	margin-bottom: 30px
+
+.listbox__open
+	display: block !important
+	opacity: 1 !important
+	animation-name: fadeIn
+	animation-duration: 1s
+	animation-fill-mode: both
+@-webkit-keyframes fadeIn 
+	0%
+		opacity: 0
+	100%
+		opacity: 1
+@keyframes fadeIn 
+	0% 
+		opacity: 0
+	100% 
+		opacity: 1
+
+.listbox__img
+	display: none
+
+.listbox__list
+	display: none
+
+/* 圖文 */
+.card
+	display: inline-block
+	width: calc(100%/4 - 20px)
+	margin: 0 20px 40px 0
+	vertical-align: top
+	&:nth-child(4n)
+		margin-right: 0
+	+rwd(768px)
+		width: calc(100%/2 - 15px)
+		&:nth-child(2n)
+			margin-right: 0
+	+rwd(640px)
+		display: block
+		width: 100%
+		margin: 0 0 20px
+
+/* 文字列 */
+.list
+	width: 100%
+
+/*內容*/
+.card,.list
+	&__body
+		padding: 10px
+	&__tip
+		+font-size(15px)
+		color: #666
+	&__title
+		+font-size(18px)
+		font-weight: bold
+		a
+			color: #000
+	&__txt
+		+font-size(16px) 
+		color: #333
+		margin-bottom: 10px
+
+.card
+	&__img
+		position: relative
+		overflow: hidden
+		img
+			width: 100%
+			height: auto
+			vertical-align: top
+
+/*詳細頁*/
+.list-detail
+	width: 100%
+	display: block
+	position: relative
+	&__title
+		margin-bottom: 5px
+    	+font-size(30px)
+		font-weight: bold
+		border-bottom: 1px solid #ccc
+	&__tip
+		+font-size(15px)
+		color: #666666
+	text-align: right
+
+.edit
+	&__list-detail
+		padding: 10px
+	border-bottom: 1px solid #ccc
+	img
+      max-width: 100%
+
+
+
+/*裝飾*/
+.cover
+	&-border
+		border: 1px solid #cccccc
+	&-underline
+		border-bottom: 1px solid #cccccc
+
+/*按鈕*/
+.card__btn
+	display: block
+	padding: 0.5em 0.75em
+	border-radius: .25em
+	+font-size(16px)
+	text-align: center
+	white-space: nowrap
+	vertical-align: middle
+	cursor: pointer
+	user-select: none
+	&--primary
+		color: #fff
+		background-color: #0275d8

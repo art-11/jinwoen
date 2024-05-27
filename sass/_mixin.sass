@@ -1,0 +1,276 @@
+//This is sass file
+//background 設定
+=bg($img, $pos-x: 0, $pos-y: 0, $rep: no-repeat)
+	background-image: url("../images/#{$img}")
+	background-position: $pos-x $pos-y
+	background-repeat: $rep
+//rwd point
+=rwd($point)
+	@media only screen and (max-width: $point)
+		@content
+=rwd2($point2)
+	@media only screen and (min-width: $point2)
+		@content
+//calc
+=calc($property, $expression)
+	#{$property}: -moz-calc(#{$expression})
+	#{$property}: -webkit-calc(#{$expression})
+	#{$property}: calc(#{$expression})
+//+bficon(30,30,'\f138')
+=bficon($width,$height,$content,$font-size:100%,$top:0,$left:0)
+	position: relative
+	&:before
+		content: $content
+		position: absolute
+		top: $top
+		left: $left
+		width: $width
+		height: $height
+		font-family: 'icomoon'
+		font-size: $font-size
+		@content
+//文字框線
+=stroke($s-width, $color)
+	$s-width: $s-width
+	$shadow: 0 0 0 transparent
+	$i: 0
+	$w: 1
+	@while ($s-width > $i)
+		$i: $i + 1
+		$j: 0
+		$w: $w + 2
+		@for $r from 1 through $w
+			@for $c from 1 through $w
+				$x: $c - ceil($w / 2)
+				$y: $r - ceil($w / 2)
+				$shadow: #{$shadow}, #{$x}px #{$y}px 0 $color
+	text-shadow: $shadow
+
+//Animate Mixin Plugin
+=animate($name: fadeIn, $duration: 1s, $delay: .2s, $function: ease, $mode: both)
+	+experimental(animation, $name $duration $delay $function $mode)
+//case mixin
+=inner($inr-w)
+	max-width: $inr-w
+	+rwd($inr-w)
+		padding: 0 15px
+
+=ellipsis($els_height: 1)
+	overflow: hidden
+	@if($els_height <= 1)
+		white-space: nowrap
+		text-overflow: ellipsis
+		@content
+	@else if($els_height > 1)
+		display: -webkit-box
+		text-overflow: ellipsis
+		-webkit-line-clamp: $els_height
+		-webkit-box-orient: vertical
+		@content
+
+//文字轉換 rem
+=font-size($newSize)
+	$remSize: $newSize / $fontSz
+	$remlineHeight:  $fontLh * $newSize / ( $fontSz * $fontSz )
+	font-size: $newSize
+	font-size: #{$remSize}rem
+	line-height: #{$remlineHeight}rem
+//rem算式
+@function toRem($size)
+	$remSize: $size / $fontSz
+	@return $remSize * 1rem
+//文字行高轉換 rem
+=font-size2($newSize2,$newLineHeight)
+	font-size: $newSize2
+	font-size: toRem($newSize2)
+	line-height: $newLineHeight
+	line-height: toRem($newLineHeight)
+
+// triangle 三角形 mixin
+=triangle ($size, $color, $direction)
+	height: 0
+	width: 0
+	$width: nth($size, 1)
+	$height: nth($size, length($size))
+	$foreground-color: nth($color, 1)
+	$background-color: if(length($color) == 2, nth($color, 2), transparent)
+	@if ($direction == up) or ($direction == down) or ($direction == right) or ($direction == left)
+		$width: $width / 2
+		$height: if(length($size) > 1, $height, $height/2)
+		@if $direction == up
+			border-bottom: $height solid $foreground-color
+			border-left: $width solid $background-color
+			border-right: $width solid $background-color
+
+		@else if $direction == right
+			border-bottom: $width solid $background-color
+			border-left: $height solid $foreground-color
+			border-top: $width solid $background-color
+		@else if $direction == down
+			border-left: $width solid $background-color
+			border-right: $width solid $background-color
+			border-top: $height solid $foreground-color
+		@else if $direction == left
+			border-bottom: $width solid $background-color
+			border-right: $height solid $foreground-color
+			border-top: $width solid $background-color
+	@else if ($direction == up-right) or ($direction == up-left)
+		border-top: $height solid $foreground-color
+		@if $direction == up-right
+			border-left:  $width solid $background-color
+		@else if $direction == up-left
+			border-right: $width solid $background-color
+	@else if ($direction == down-right) or ($direction == down-left)
+		border-bottom: $height solid $foreground-color
+		@if $direction == down-right
+			border-left:  $width solid $background-color
+		@else if $direction == down-left
+			border-right: $width solid $background-color
+	@else if ($direction == inset-up)
+		border-color: $background-color $background-color $foreground-color
+		border-style: solid
+		border-width: $height $width
+	@else if ($direction == inset-down)
+		border-color: $foreground-color $background-color $background-color
+		border-style: solid
+		border-width: $height $width
+	@else if ($direction == inset-right)
+		border-color: $background-color $background-color $background-color $foreground-color
+		border-style: solid
+		border-width: $width $height
+	@else if ($direction == inset-left)
+		border-color: $background-color $foreground-color $background-color $background-color
+		border-style: solid
+		border-width: $width $height
+
+//置中 'v' 垂直置中 'h' 水平置中 'b' 垂直水平置中
+=center($position)
+	position: absolute
+	@if $position == 'v'
+		top: 50%
+		transform: translateY(-50%)
+	@else if $position == 'h'
+		left: 50%
+		transform: translate(-50%)
+	@else if $position == 'b'
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+//+iconpc(b,'\f138')
+//前面 加小圖示並置中-絶對位置 (要設定置中位置、圖示內容)
+//置中位置 'b'= 表示 水平垂直置中, 'x'= 表示 水平置中, 'y'= 表示 垂直置中
+//+iconpc(b,'\f138',0,100%,inherit,auto,auto)
+=iconpc($position,$content,$number:0,$font-size:100%,$color:inherit,$width:auto,$height:auto)
+	position: relative
+	@if $position == 'b'
+		&:before
+			content: $content
+			position: absolute
+			top: 50%
+			left: 50%
+			width: $width
+			height: $height
+			font-family: 'icomoon'
+			font-size: $font-size
+			color: $color
+			transform: translate(-50%, -50%)
+	@else if $position == 'x'
+		&:before
+			content: $content
+			position: absolute
+			top: $number
+			left: 50%
+			width: $width
+			height: $height
+			font-family: 'icomoon'
+			font-size: $font-size
+			color: $color
+			transform: translateX(-50%)
+	@else if $position == 'y'
+		&:before
+			content: $content
+			position: absolute
+			top: 50%
+			left: $number
+			width: $width
+			height: $height
+			font-family: 'icomoon'
+			font-size: $font-size
+			color: $color
+			transform: translateY(-50%)
+
+//+iconfont(b,'\f138')
+//+iconfont(t,'\f138',inherit,30px)
+//前面或後面 加入iconfont(類型,圖示內容,顏色,字體大小)
+//類型 't'= 表示text直接加入iconfont, 'b'= 表示加入before, 'a'= 表示加入after
+=iconfont($type,$content,$color:inherit,$font-size:100%)
+	@if $type == 't'
+		content: $content
+		font-family: 'icomoon'
+		font-size: $font-size
+		color: $color
+		@content
+	@else if $type == 'b'
+		&:before
+			content: $content
+			font-family: 'icomoon'
+			font-size: $font-size
+			color: $color
+			@content
+	@else if $type == 'a'
+		&:after
+			content: $content
+			font-family: 'icomoon'
+			font-size: $font-size
+			color: $color
+			@content
+
+//清除表單元素樣式	
+=appearance($elements)
+	appearance: $elements
+	-webkit-appearance: $elements
+	-moz-appearance: $elements 
+
+
+=placeholder-color($color)
+	&::placeholder
+		color: $color
+		opacity: 1
+		letter-spacing: 0
+
+	&::-webkit-input-placeholder  /* WebKit browsers */
+		color: $color
+		letter-spacing: 0
+ 
+	&:-moz-placeholder /* Mozilla Firefox 4 to 18 */
+		color: $color
+		letter-spacing: 0
+
+	&::-moz-placeholder /* Mozilla Firefox 19+ */
+		color: $color
+		letter-spacing: 0
+
+	&:-ms-input-placeholder /* Internet Explorer 10+ */
+		color: $color
+
+
+//+bgg(y,#fff 80%,#E0E0E0)
+//漸層 gradient(漸層結束色彩,漸層起始色彩,類型)
+//direction方向 'x'= 表示由左至右漸層,'y'= 表示top由上至下漸層,'b'= 表示從下至上方開始漸層,
+//angle角度 'd'= 表示要輪入角度度數,'o'= 表示圓形漸層
+=bgg($gradient:y,$color:transparent,$color2:transparent,$deg:'')
+	@if $gradient == 'x'
+		background: linear-gradient(to right,$color,$color2)
+		// +background(linear-gradient(left,$color,$color2))
+	@else if $gradient == 'y'
+		background: linear-gradient($color,$color2)
+		// +background(linear-gradient(top,$color,$color2))
+	@else if $gradient == 'b'
+		background: linear-gradient(to top,$color,$color2)
+		// +background(linear-gradient(bottom,$color,$color2))
+	@else if $gradient == 'd'
+		background: linear-gradient($deg,$color,$color2)
+		// +background(linear-gradient($deg,$color,$color2))
+	@else if $gradient == 'o'
+		background: radial-gradient($color,$color2)
+		// +background(radial-gradient($color,$color2))

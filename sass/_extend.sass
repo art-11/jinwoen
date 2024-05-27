@@ -1,0 +1,37 @@
+//======================
+//按鈕 Button
+//======================
+%Btn
+	width: $btnWidth
+	height: $btnHeight
+	margin: 5px
+	padding: (($btnHeight - $btnIconSize)/2) 10px
+	display: inline-block
+	font-weight: normal
+	text-decoration: none
+	text-align: center
+	white-space: nowrap
+	vertical-align: middle
+	-ms-touch-action: manipulation
+	touch-action: manipulation
+	cursor: pointer
+	user-select: none
+	overflow: hidden
+	border-width: $btnLineWidth
+	border-style: solid
+	position: relative
+	appearance: none
+	transition: all .3s ease-out
+	&:focus,
+	&:active:focus
+		outline-offset: -2px
+		text-decoration: none
+	&:active
+		background-image: none
+		outline: 0
+//清除
+%clear
+	&:after
+		content: ""
+		display: table
+		clear: both
